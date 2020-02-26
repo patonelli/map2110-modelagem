@@ -1,0 +1,49 @@
+\documentclass{book}
+\usepackage{amsmath}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{polyglossia}
+
+\setdefaultlanguage[variant=brazilian]{portuguese}
+
+\title{Notas de Modelagem Matemática}
+\author{Pedro A Tonelli}
+
+\begin{document}
+    \maketitle
+    \chapter{Números Naturais}
+
+    \section{Axiomas de Peano}
+
+     Quero destacar, neste capítulo, algumas propriedades
+    do conjunto dos números naturais que o tornam essencial na modelagem 
+    matemática. Ele introduz a noção de ordem, enumeração e quantidade nos 
+    outros conjuntos de interesse. Em particular, o conjunto dos números
+    naturais será nosso primeiro candidato para expressar matemáticamente a 
+    noção de tempo. A aritmética, presente de forma natural em 
+  $\mathbb{N}$ irá se generalizar para outros conjuntos numéricos.
+
+  No final do século XIX, o italiano Giuseppe Peano deu uma construção lógica do conjunto dos números naturais. Isto é, uma construção a partir de postulados. Estes axiomas são o resumo das propiedades fundamentais de $\mathbb{N}$
+
+  \begin{itemize}
+    \item[A] Existe um elemento especial  em $\mathbb{N}$ que chamaremos de $0$. (Em alguns casos este elemento é o 1).
+    \item[B] Existe uma função injetora $S: \mathbb{N} \to \mathbb{N}$, que chamaremos \textit{função sucessor} que satisfaz: $S$ está definida para todo $x\in \mathbb{N}$ e o $0$ não está na imagem de $S$.
+    \item[C] (\textbf{Princípio da indução}) Se $K$ é um subconjunto de $\mathbb{N}$ que contém $0$ e se $x\in K$ acarreta que $S(x)\in K$, então $K=\mathbb{N}$
+    
+  \end{itemize}
+\section{Operações algébricas em $\mathbb{N}$}
+
+A brincadeira agora é tentar construir todas as propriedades e operações, com as quais estamos acostumados, do conjunto dos naturais usando apenas os axiomas \textbf{A}, \textbf{B} e \textbf{C}.
+
+Comecemos com a definição de soma: 
+
+\textbf{Definição: } Se $a$ e $b$ são números naturais então definimos:
+\begin{eqnarray}
+  a + 0 = a & \text{para todo } a \\
+  a + S(b) = S(a+b) & \text{ para todo } a \text{ e } b
+\end{eqnarray}
+
+Esta é uma definição usando recorrência. A primeira coisa que precisamos entender é que esta soma está definida para  todos os números naturais:
+Fazemos assim:
+Fixo um número natural $n$ e defino $K_n=\{b\in \mathbb{N}: n+b \text{ está definido }\}$, este conjunto contém $0$, direto da definição e se $b \in K_n$ então $S(b) \in K_n$ e assim pela propriedade \textbf{C} $K_n = \mathbb{N}$  
+\end{document}

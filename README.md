@@ -1,2 +1,3 @@
-# map2110-modelagem
-Modelagem matemática é um curso do primeiro semestre da matemática aplicada
+# Modelagem
+
+Notas do curso MAP2110 Modelagem matemática

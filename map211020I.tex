@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+
+\parindent=0pt
+
+ \addtolength{\textheight}{3.5cm}
+ \addtolength{\oddsidemargin}{-1cm}
+ \addtolength{\evensidemargin}{-1cm}
+ \addtolength{\textwidth}{2cm}
+ \addtolength{\topmargin}{-2.0cm}
+\newcounter{questao}
+\newcommand{\quest}{\stepcounter{questao}{\bf \arabic{questao}.\ }}
+
+\begin{document}
+\setdefaultlanguage[variant=brazilian]{portuguese}
+\hrule
+ {  \sf  Lista de exercícios 1 MAP2110  \hfill \fbox{L1-2020}}
+\hrule
+
+\vspace{0.5cm}
+
+\thispagestyle{empty}
+\fontsize{14}{16}\selectfont
+
+\quest Mostre que 
+
+$$ 1^3 + 2^3 + \cdots + n^3 = (1+2+ \cdots n)^2 $$
+
+\vspace{0.3cm}
+
+\quest Note a sequência de identidades:
+\begin{gather*}
+  1=1 \\
+  1 -4 = -(1+2) \\
+  1 -4 + 9 = 1+2+3 \\
+  \cdots
+\end{gather*}
+infira uma lei geral e a demonstre por indução.
+
+\vspace{0.3cm}
+
+\quest Seja $\mathbf{v}=(1, 5, -2)$ e $\mathbf{w}=(0 , t, 2t)$,onde $t\in \mathbb{R}$,
+achar a norma $\|\mathbf{v}-2\mathbf{w}\|$. Para que valor de $t$ esta norma atinge o
+máximo. E o mínimo.
+
+\vspace{0.3cm}
+
+\quest Achar a projeção ortogonal do vetor $\mathbf{v}=(1,2,0)$ na direção do 
+vetor $(0,1, 1)$
+
+\vspace{0.3cm}
+
+\quest Vamos considerar $\mathbb{N}^2 = \{ (i,j): i,j \in \mathbb{N}\}$ como um
+subconjunto de $V_2$ (são os vetores com coordenadas naturais). Além disso defino 
+um conjunto $I=\{(x,y)\in \mathbb{N}^2 \text{ tal que }  10\leq x \leq 15 \text{ e }
+10 \leq y \leq 15\}$ e  $K=\{(x,y)\in \mathbb{N}^2 \text{ tal que } 40 \leq y \}$
+A região de $\mathbb{N}^2$ fora de $I$ e fora de $K$ vamos chamar de \textbf{mar}.
+Um circuito em torno de $I$ é uma sequência de vetores não nulos
+$\mathbf{v}_1, \dots , \mathbf{v}_k$ tal que 
+\begin{itemize}
+    \item $\sum_{i=1}^k \mathbf{v}_i= (0,0)$
+    \item $\sum_{i=1}^l \mathbf{v}_i$ está no mar para $l<k$
+    \item $\| \mathbf{v}_{i+1}-\mathbf{v}_i\| \leq 1.5 $
+\end{itemize}
+Exiba um circuito neste caso. Tente fazer com que $k$ seja o menor possível.
+\end{document}

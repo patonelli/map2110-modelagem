@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\parindent=0pt
+
+ \addtolength{\textheight}{3.5cm}
+ \addtolength{\oddsidemargin}{-1cm}
+ \addtolength{\evensidemargin}{-1cm}
+ \addtolength{\textwidth}{2cm}
+ \addtolength{\topmargin}{-2.0cm}
+\newcounter{questao}
+\newcommand{\quest}{\stepcounter{questao}{\bf \arabic{questao}.\ }}
+
+\begin{document}
+\hrule
+ {  \sf Soluções dos problemas dos slides   \hfill \fbox{}}
+\hrule
+
+\vspace{0.5cm}
+
+\thispagestyle{empty}
+\fontsize{14}{16}\selectfont
+
+\quest  Considerem os vetores 
+$$ \vec{v}_1=\mathbf{i} \text{  }  \vec{v}_2=\mathbf{i} + \mathbf{j} \text{ e }\vec{v}_3 = \mathbf{i + j + 3k} $$
+
+\begin{itemize}
+    \item Prove que $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$ é LI
+    \item Escreva os vetores $\mathbf{i}$ e $\mathbf{j}$ como combinação linear de $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$
+    \item Escreva o vetor $2\mathbf{i} -3\mathbf{j} + 5\mathbf{k}$ como combinação linear de $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$
+    \item Prove que $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$ é uma base.
+\end{itemize}
+
+\textit{Solução} Este foi o único que fizemos na aula. Para a primeira parte vamos mostrar que se 
+$$ \vec{0} = a\vec{v}_1 + b\vec{v}_2 + c\vec{v}_3$$ então devemos ter $a=b=c=0$.
+
+Reescrevemos a fórmula acima usando os vetores canônicos:
+$mathbf{i},$ $\mathbf{j}$ e $\mathbf{k}$ e as definições de $\vec{v}_i$ temos:
+$$\vec{0} = (a+b+c)\mathbf{i} + (b+c)\mathbf{j} + 3c\mathbf{k} $$
+daí concluímos que:
+\begin{gather*}
+3c = 0 \implies c =0 \\
+b+c =0 \implies b+ 0 =0 \implies b=0\\
+a+b+c=0 \implies a=0
+\end{gather*}
+que era o que precisávamos mostrar.
+
+Para a segunda parte vemos que $\mathbf{i} =\vec{v}_1$
+e $\mathbf{j} = \vec{v}_2 - \vec{v}_1$ e só para completar temos que $\mathbf{k}=\frac{1}{3}(\vec{v}_3 - \vec{v}_2)$
+
+Assim o vetor  $2\mathbf{i} -3\mathbf{j} + 5\mathbf{k}$ é o mesmo que 
+$2(\vec{v}_1) -3(\vec{v}_2 - \vec{v}_1) + \frac{5}{3}(\vec{v}_3 - \vec{v}_2)$ que simplificando se escreve
+$$5\vec{v}_1 -\frac{14}{3}\vec{v}_2 + \frac{5}{3}\vec{v}_3 $$
+A última parte do exercício pede para provar que o conjunto é uma base. Para ser base precisa mostrar que é um conjunto LI, o que já fizemos, e que o conjunto gera o espaço, isto é que todo vetor de $V_3$ se escreve como combinação linear
+de $\vec{v}_i$. Mas simplesmente fazemos como no último exercicio.
+$$ a\mathbf{i} + b\mathbf{j} + c\mathbf{k} =a(\vec{v}_1) +b(\vec{v}_2 - \vec{v}_1) + \frac{c}{3}(\vec{v}_3 - \vec{v}_2)$$ etc.
+
+
+
+\vspace{0.3cm}
+
+\quest \begin{itemize}
+    \item Mostre que os vetores $(\sqrt{3}, 1, 0)$, $(1,\sqrt{3}, 1)$ e $(0,1,\sqrt{3})$ são LI.
+    
+\item Mostre que os vetores $(\sqrt{2}, 1, 0)$, $(1,\sqrt{2}, 1)$ e $(0,1,\sqrt{3})$ são LD.
+
+\item Encontre todos os valores reais possíveis de $t$ para que os vetores $(t, 1, 0)$, $(1,t, 1)$ e $(0,1,t)$ sejam LD.
+
+\end{itemize}
+
+\textit{Solução:} Vamos mostrar que o primeiro conjunto de vetores é LI. Então
+\[ \vec{0} = a(\sqrt{3},1,0) + b(1,\sqrt{3},1) + c (0,1,\sqrt{3}) \] 
+Então
+\begin{gather*}
+\sqrt{3}a+b =0 \\
+a + \sqrt{3}b + c =0 \\
+b + \sqrt{3}c = 0
+\end{gather*}
+
+Note que da primeira e terceira equações concluímos que $a=c.$ A segunda equação fica:  $2a + \sqrt{3}b =0$ podemos multiplicar esta equação por $\frac{\sqrt{3}}{2}$ obtendo
+$\sqrt{3}a + \frac{3}{2}b = 0$. Agora subtraindo a primeira equação original temos $\frac{1}{2}b=0$. Então $b=0$ acarreta que $a=0$ e portanto também $c=0$. Pronto.
+
+Porque o outro conjunto é LD. Procedemos como anteriormente com a única diferença de que no lugar de $\sqrt{3}$ temos $\sqrt{2}$. as equações anteriores ficam assim:
+\begin{gather*}
+\sqrt{2}a+b =0 \\
+a + \sqrt{2}b + c =0 \\
+b + \sqrt{2}c = 0
+\end{gather*}
+Novamente concluimos rapidamente que $a=c$ da mesma forma que antes. Então a segunda equação fica:
+$2a + \sqrt{2}b =0$ se multiplicamos esta equação por $\frac{\sqrt{2}}{2}$ vemos que esta é exatamente a primeira equação. Ou seja para qualquer valor de $b$ que escolhemos obtemos soluções para $a$ e $c$. Por exemplo,  $ a=-1$ $b=\sqrt{2}$ e $c=-1$ é uma solução do sistema e a combinação linear dos vetores com estes coeficientes produz o vetor nulo.
+
+
+
+\vspace{0.3cm}
+
+\quest Se três vetores de $V_n$, $\vec{a},$  $\vec{b}$ e $\vec{c}$ são LI. Verifique se cada uma das afirmações abaixo é verdadeira ou falsa. 
+    \begin{itemize}
+        \item $\vec{a}+\vec{b}$, $\vec{b}+\vec{c}$ e $\vec{c} + \vec{a}$ formam um conjunto LI.
+        
+        \item $\vec{a}-\vec{b}$, $\vec{b}+\vec{c}$ e $\vec{c} + \vec{a}$ formam um conjunto LI.
+    \end{itemize}
+
+\textit{Solução}
+Vamos começar verificando que o segundo item é falso pois
+o primeiro vetor do conjunto $\vec{a} -\vec{b}$ é combinação linear dos outros dois. Então os vetores serão LD.
+$$ \vec{a}-\vec{b} = (\vec{c}+\vec{a}) - (\vec{b}+\vec{c})$$
+
+O primeiro ítem é verdadeiro pois se
+$$\vec{0}= \alpha(\vec{a}+\vec{b}) + \beta(\vec{b}+\vec{c})+\gamma(\vec{c}+\vec{a})= (\alpha +\gamma)\vec{a}+(\alpha+\beta)\vec{b}+(\beta +\gamma)\vec{c}$$ por causa da hipótese de independência de $\{ \vec{a}, \vec{b},\vec{c}\}$. Isto nos dá as equações:
+\begin{gather*}
+    \alpha + \gamma = 0 \\
+    \alpha + \beta = 0 \\
+    \beta + \gamma = 0
+\end{gather*}
+o que trivialmente implica que todos devem ser zero, provando que estes vetores são LI.
+Mais prá frente veremos alguns resultados que nos permitirão decidir mais rapidamente sobre a dependência linear dos conjuntos.
+
+\end{document}

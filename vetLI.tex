@@ -1,0 +1,89 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\title[Vetores LI]{Vetores linearmente independentes e base}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{24 de março}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Introdução}
+
+Uma família de vetores $\{ \vec{v}_1, \dots, \vec{v}_n \}$ é linearmente independente se, e somente se a única forma de se escrever o vetor nulo $\vec{0}$ como combinação linear é a trivial.
+Isto também significa que nenhum vetor $\vec{v}_i$ deste conjunto pode se escrever como combinação linear dos vetores restantes.
+
+Se $\vec{v}$ é um vetor do sub-espaço gerado por $\{ \vec{v}_1 \dots \vec{v}_n \}$ de quantas formas diferentes ele pode ser escrito como combinação linear desses vetores?
+
+\end{frame}
+
+\section{Alguns Exercícios}
+
+\subsection{Exercicios do Apostol}
+
+\begin{frame}{Exercicio 1:}
+Considerem os vetores 
+$$ \vec{v}_1=\mathbf{i} \text{  }  \vec{v}_2=\mathbf{i} + \mathbf{j} \text{ e }\vec{v}_3 = \mathbf{i + j + 3k} $$
+
+\begin{itemize}
+    \item Prove que $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$ é LI
+    \item Escreva os vetores $\mathbf{i}$ e $\mathbf{j}$ como combinação linear de $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$
+    \item Escreva o vetor $2\mathbf{i} -3\mathbf{j} + 5\mathbf{k}$ como combinação linear de $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$
+    \item Prove que $\{ \vec{v}_1,\vec{v}_2,\vec{v}_3\}$ é uma base.
+\end{itemize}
+
+\end{frame}
+
+\subsection{Exercicio 2}
+
+\begin{frame}{Exercicio 2}
+
+\begin{itemize}
+    \item Mostre que os vetores $(\sqrt{3}, 1, 0)$, $(1,\sqrt{3}, 1)$ e $(0,1,\sqrt{3})$ são LI.
+    
+\item Mostre que os vetores $(\sqrt{2}, 1, 0)$, $(1,\sqrt{2}, 1)$ e $(0,1,\sqrt{3})$ são LD.
+
+\item Encontre todos os valores reais possíveis de $t$ para que os vetores $(t, 1, 0)$, $(1,t, 1)$ e $(0,1,t)$ sejam LD.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Exercício 3}
+   Se três vetores de $V_n$, $\vec{a},$  $\vec{b}$ e $\vec{c}$ são LI. Verifique se cada uma das afirmações abaixo é verdadeira ou falsa. 
+    \begin{itemize}
+        \item $\vec{a}+\vec{b}$, $\vec{b}+\vec{c}$ e $\vec{c} + \vec{a}$ formam um conjunto LI.
+        
+        \item $\vec{a}-\vec{b}$, $\vec{b}+\vec{c}$ e $\vec{c} + \vec{a}$ formam um conjunto LI.
+    \end{itemize}
+\end{frame}
+
+\end{document}

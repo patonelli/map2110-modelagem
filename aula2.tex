@@ -56,6 +56,16 @@ Uma reta $L$ em $V_2$ contém os pontos $P=(-3,1)$ e $Q=(1,1),$ quais dos seguin
    \item[E]$(-2,1)$
 \end{itemize}
 \end{frame}
+\begin{frame}{Solução}
+  Um vetor paralelo a $L$ é $\vec{u}=Q-P=(4,0)$.
+  A equação vetorial da reta 
+  $$L=(1,1)+t(4,0)= \{(1+4t,1)\}$$
+  $B$ $D$ e $E$ satisfazem a condição.
+\end{frame}
+
+\begin{frame}{contas 1}
+  
+\end{frame}
 
 \subsection{Exercicio 2}
 
@@ -70,8 +80,39 @@ Verifique em cada um dos casos se os três pontos estão numa mesma reta:
 
 \end{frame}
 
+\begin{frame}{solução}
+  Devemos, em cada caso verificar se os vetores $R-P$ e $Q-P$ são paralelos.
+  \begin{itemize}
+    \item $R-P =(1,-2,0)$ e $R-Q=(-1,-2,2)$ não são.
+    \item $R-P =(-8,2,-2)$ e $R-Q=(-4,1,0)$ não são.
+    \item $R-P =(3,-2,0)$ e $R-Q=(7,-4,0)$ não são.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Comentários}
+
+  
+\end{frame}
+
+
 \begin{frame}{Exercício 3}
    Uma reta $L_1$ passa pelo ponto $P=(1,1,1)$ e é paralela ao vetor $A=(1,2,3).$ Uma outra $L_2$ passa pelo ponto $Q=(2,1,0)$ e é paralela ao vetor $B=(3,8,13).$  Mostre que as duas retas se interceptam e determine o ponto de intersecção.
+\end{frame}
+
+\begin{frame}{Solução}
+  \begin{gather*}
+    L1: (1,1,1) + s(1,2,3) \\
+    L2: (2,1,0) + t(3,8,13)
+  \end{gather*}
+$$(1,1,1) + s(1,2,3)= (2,1,0) + t(3,8,13)$$
+  Resolvendo o sistema temos 
+  $t=1$ e $s=4$
+  $(5,9,13)$ é o ponto de intersecção.
+
+\end{frame}
+
+\begin{frame}{comentários}
+  
 \end{frame}
 
 \begin{frame}{Exercício 4}
@@ -81,6 +122,25 @@ Seja $X(t) = P + tA$ um ponto genérico da reta $L(P,A)$ onde $P=(1,2,3)$ e $A=(
     \item Mostre que existe um único ponto $X(t_0)$ que minimiza $\| X(t) - Q \|^2$
     \item Mostre que $Q-X(t_0)$ é ortogonal a $A$
 \end{itemize}
+    \end{frame}
+
+    \begin{frame}{solução}
+     \begin{gather*}
+       X(t) = (1,2,3)+t(1,-2,2) \\
+       Q=(3,3,1)\\
+       X(t)-Q =(-2+t,-1-2t,2+2t)\\
+       \|X(t)-Q\|^2 = (-2+t)^2 (-1-2t)^2+(2+2t)^2\\
+       \|X(t)-Q\|^2 = 9t^2 + 8t +9
+     \end{gather*} 
+     que tem um único ponto de mínimo em $t_0=-\frac{4}{9}$
+    \end{frame}
+    \begin{frame}{solução item 3}
+      Fazendo $t_0=-4/9$ temos
+      $$X(t_0)-Q = (\frac{-22}{9}, \frac{-1}{9},\frac{10}{9})$$
+      que é ortogonal a $(1,-2,2)$
+    \end{frame}
+    \begin{frame}{Comentários Finais}
+      
     \end{frame}
 
 \end{document}

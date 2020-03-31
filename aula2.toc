@@ -2,4 +2,4 @@
 \beamer@sectionintoc {1}{Exercícios}{2}{0}{1}
 \beamer@sectionintoc {2}{Alguns Exercícios}{3}{0}{2}
 \beamer@subsectionintoc {2}{1}{Exercícios do Apostol}{3}{0}{2}
-\beamer@subsectionintoc {2}{2}{Exercicio 2}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Exercicio 2}{5}{0}{2}

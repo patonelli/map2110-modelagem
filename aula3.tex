@@ -1,0 +1,173 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\title[Retas e Planos]{Produto Vetorial e Cônicas}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{7 de abril}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section {Produto Vetorial}
+
+\begin{frame}{Definição}
+ 
+ \begin{gather*}
+   \vec{a}=(a_1,a_2,a_3)\\
+   \vec{b}=(b_1,b_2,b_3)\\
+   \vec{a}\times \vec{b}=(a_2b_3-a_3b_2, a_3b_1-a_1b_3, a_1b_2-a_2b_1)
+ \end{gather*}
+
+\end{frame}
+
+\begin{frame}{Exemplos}
+Uma reta $L$ em $V_2$ contém os pontos $P=(-3,1)$ e $Q=(1,1),$ quais dos seguintes pontos também estão em $L$
+\begin{itemize}
+   \item[A]$(0, 1, 2) \times (1,0,-1)$
+   \item[B]$ (\mathbf{i}\times\mathbf{k})\times\mathbf{j}$
+   \item[C]$ (\mathbf{i}\times\mathbf{i})\times\mathbf{j}$
+   \item[D]$ (\mathbf{i} + 2\mathbf{j}) \times (2\mathbf{i} - \mathbf{k}$)
+\end{itemize}
+\end{frame}
+\begin{frame}
+  
+
+\end{frame}
+
+\begin{frame}{Propriedades}
+  \begin{itemize}
+    \item $(\vec{a}\times \vec{b}) = - (\vec{b}\times \vec{a})$
+    \item 
+    
+  \end{itemize}
+
+\end{frame}
+
+
+\subsection{Exercicio 2}
+
+\begin{frame}{Exercicio 2}
+
+Verifique em cada um dos casos se os três pontos estão numa mesma reta:
+\begin{itemize}
+    \item $P=(2,1,1)$ $Q=(4,1,-1)$ e $R=(3,-1,1)$
+    \item $P=(2,2,3)$ $Q=(-2,3,1)$ e $R=(-6,4,1)$
+    \item $P=(2,1,1)$ $Q=(-2,3,1)$ e $R=(5,-1,1)$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{solução}
+  Devemos, em cada caso verificar se os vetores $R-P$ e $Q-P$ são paralelos.
+  \begin{itemize}
+    \item $R-P =(1,-2,0)$ e $R-Q=(-1,-2,2)$ não são.
+    \item $R-P =(-8,2,-2)$ e $R-Q=(-4,1,0)$ não são.
+    \item $R-P =(3,-2,0)$ e $R-Q=(7,-4,0)$ não são.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exercício 3}
+   Uma reta $L_1$ passa pelo ponto $P=(1,1,1)$ e é paralela ao vetor $A=(1,2,3).$ Uma outra $L_2$ passa pelo ponto $Q=(2,1,0)$ e é paralela ao vetor $B=(3,8,13).$  Mostre que as duas retas se interceptam e determine o ponto de intersecção.
+\end{frame}
+
+\begin{frame}{Solução}
+  \begin{gather*}
+    L1: (1,1,1) + s(1,2,3) \\
+    L2: (2,1,0) + t(3,8,13)
+  \end{gather*}
+$$(1,1,1) + s(1,2,3)= (2,1,0) + t(3,8,13)$$
+  Resolvendo o sistema temos 
+  $t=1$ e $s=4$
+  $(5,9,13)$ é o ponto de intersecção.
+
+\end{frame}
+
+\begin{frame}{Exercício 4}
+Seja $X(t) = P + tA$ um ponto genérico da reta $L(P,A)$ onde $P=(1,2,3)$ e $A=(1,-2,2).$ Tomemos o ponto $Q=(3,3,1)$
+\begin{itemize}
+    \item Calcule $\| X(t) - Q \|^2$
+    \item Mostre que existe um único ponto $X(t_0)$ que minimiza $\| X(t) - Q \|^2$
+    \item Mostre que $Q-X(t_0)$ é ortogonal a $A$
+\end{itemize}
+    \end{frame}
+
+    \begin{frame}{solução}
+     \begin{gather*}
+       X(t) = (1,2,3)+t(1,-2,2) \\
+       Q=(3,3,1)\\
+       X(t)-Q =(-2+t,-1-2t,2+2t)\\
+       \|X(t)-Q\|^2 = (-2+t)^2 + (-1-2t)^2+(2+2t)^2\\
+       \|X(t)-Q\|^2 = 9t^2 + 8t +9
+     \end{gather*} 
+     que tem um único ponto de mínimo em $t_0=-\frac{4}{9}$
+    \end{frame}
+    \begin{frame}{solução item 3}
+      Fazendo $t_0=-4/9$ temos
+      $$X(t_0)-Q = (\frac{-22}{9}, \frac{-1}{9},\frac{10}{9})$$
+      que é ortogonal a $(1,-2,2)$
+    \end{frame}
+   
+    \begin{frame}{Equação do Plano}
+      Dada a equação vetorial de um plano $M =\{P+sA+tB\}$
+      com $P=(1,2,-3)$ e $A=(3,2,1)$ $B=(1,0,4)$.
+      Verificar se o ponto $(1,2,0)\in M$
+      
+    \end{frame}
+    \begin{frame}{Solução}
+      \begin{gather*}
+        X=(1,2,0) \text{ e }X-P=(0,0,3) \\
+        (0,0,3)= t(3,2,1) + s(1,0,4) ? \\
+        3t + s =0 \\
+        2t + 0 =0 \\
+        t + 4s =4
+      \end{gather*}
+      sistema impossível!
+
+       \end{frame}
+\begin{frame}
+  Achar a equação cartesiana de $M$ quando este é um plano  
+  que passa por $(2,3,1)$ gerado por $(3,2,1)$ e $(-1,-2,-3)$.
+
+\end{frame}
+\begin{frame}{solução} 
+  $M=\{ (2,3,1)+s(3,2,1)+t(-1,-2,-3)\}$ Então um ponto genérico
+   $(x,y,z)$ de $M$ satisfaz
+  \begin{gather*}
+    x-2 = 3s-t \\
+    y-3 = 2s -2t \\
+    z-1 = s-3t
+  \end{gather*}
+  Usando as duas últimas equações resolvemos o sistema 
+  para $s$ e $t$ -7/4
+  $t=1/4(y-2z-1)$ e $s=3/4y -z/2.$ Substituo na primeira equação.
+  $$x-2y+z=3$$
+
+\end{frame}
+
+\end{document}

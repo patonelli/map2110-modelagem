@@ -1,0 +1,3 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Produto Vetorial}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Exercicio 2}{6}{0}{1}

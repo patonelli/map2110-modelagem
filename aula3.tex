@@ -123,31 +123,74 @@ Então podemos escrever usando a propriedade distributiva :
 
 \begin{frame}{Como expressar $d(X,L)$}
   
-  
+  Nosso problema agora é escrever as equações das cônicas de forma mais direta a partir das definições.
  
+  \includegraphics{conica1.png}
 
 \end{frame}
 
-\begin{frame}{Exercício 4}
-
+\begin{frame}
+Na figura, $\mathbf{n}$ é um vetor unitário apontando para o lado contrário de $F$
+Então temos:
+\begin{gather*}
+  F-P = -d\mathbf{n} \text{ } d>0 \text{ e } F-P = (F-X) + (X-P) \\
+  (F-P)\cdot \mathbf{n}= (F-X)\cdot \mathbf{n} + (X-P)\cdot \mathbf{n}\\
+  -d = -(X-F)\cdot\mathbf{n} -d(X,L) \implies d(X,L)=|(X-F)\cdot\mathbf{n}-d|
+  \end{gather*}
+  Isto dá uma forma equivalente de definir a cônica onde não aparece diretamente a reta 
+  diretriz!
+  $$\|X-F\| = e |(X-F)\cdot\mathbf{n}-d|$$
 \end{frame}
 
-    \begin{frame}{solução}
-     
+    \begin{frame}{Equações polares }
+     \includegraphics{conica2.png}
     \end{frame}
    
-    \begin{frame}{Equação do Plano}
-     
+    \begin{frame}{}
+     \begin{gather*}
+       \|X-F\| = r \text{ } (X-F)\cdot\mathbf{n} = r\cos(\theta)\\
+       r= e|r\cos(\theta) - d|
+     \end{gather*}
       
     \end{frame}
-    \begin{frame}{Solução}
-      
+    \begin{frame}{}
+      Se $r\cos(\theta)-d <=0 $ então $|r\cos(\theta)-d |=d -r\cos(\theta)$
+      e a equação da cônica fica
+      $$ r = \frac{ed}{1+e\cos{\theta}}$$
+      No outro caso, se $r\cos(\theta)-d >0$ teremos
+      $$ r= \frac{ed}{e\cos{\theta}-1}$$
+      claramente isso só ocorre se $e>1$, ou seja,
+      só na hipérbole. 
     \end{frame}
 \begin{frame}
   
 \end{frame}
-\begin{frame}{solução} 
+\begin{frame}{Equações cartesianas} 
+  Voltando às equações de definição das cônicas
+  $$ \|X-F\| = e |(X-F)\cdot\mathbf{n}-d|$$ 
+  Vamos assumir que temos simetria em relação à origem e elevar os lados ao quadrado.
+  \begin{gather*}
+    (X-F)^2 = e^2((X-F)\cdot\mathbf{n}-d)^2\\
+    \|X\|^2 -2X\cdot F + \|F\|^2 = e^2(X.\cdot \mathbf{n})^2 + 2ea(X.\cdot \mathbf{n})
+    + a^2\\
+    a = ed + e F\cdot\mathbf{n}\\
+    \text{ usando a simetria teremos} \\
+    \|X\|^2 + e^2a^2 =e^2(X.\cdot \mathbf{n})^2+a^2
+  \end{gather*}
+\end{frame}
+
+\begin{frame}{Exercício 1}
+   fazer o esboço da curva:
+   \begin{gather*}
+     r= \frac{2}{1+\cos{\theta}} \\
+     r = \frac{3}{1+0.5\cos(\theta)}
+   \end{gather*}
   
 \end{frame}
+\begin{frame}
+  Achar a equação polar da cônica com $e=1/2$ e diretriz $3x+4y=25.$ (Foco em $(0,0)$)
+  
+\end{frame}
+
 
 \end{document}

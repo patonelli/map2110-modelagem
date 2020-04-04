@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  3 APR 2020 14:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  4 APR 2020 16:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -729,19 +729,39 @@ LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
 
 ] [10
 
-] [11
+]
+<conica1.png, id=83, 272.51813pt x 235.63031pt>
+File: conica1.png Graphic file (type png)
+<use conica1.png>
+Package pdftex.def Info: conica1.png  used on input line 130.
+(pdftex.def)             Requested size: 272.51746pt x 235.62973pt.
 
-] [12
+Overfull \vbox (19.98651pt too high) detected at line 130
+ []
 
-] [13
+[11
 
-] [14
+ <c:/Users/pedro/map2110-modelagem/conica1.png>] [12
+
+]
+<conica2.png, id=99, 205.5178pt x 233.37187pt>
+File: conica2.png Graphic file (type png)
+<use conica2.png>
+Package pdftex.def Info: conica2.png  used on input line 147.
+(pdftex.def)             Requested size: 205.5173pt x 233.37129pt.
+ [13
+
+ <c:/Users/pedro/map2110-modelagem/conica2.png>] [14
 
 ] [15
 
 ] [16
 
 ] [17
+
+] [18
+
+] [19
 
 ]
 \tf@nav=\write6
@@ -753,11 +773,11 @@ LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
 \tf@snm=\write8
 \openout8 = `aula3.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (c:\Users\pedro\map2110-modelagem/aula3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `aula3.out' has not changed.
 (rerunfilecheck)             Checksum: 36BC2F50651B0E485BB0A5266AFA3F49;96.
 
@@ -766,18 +786,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18644 strings out of 480994
- 349080 string characters out of 5916033
+ 18665 strings out of 480994
+ 349324 string characters out of 5916033
  613735 words of memory out of 5000000
- 33654 multiletter control sequences out of 15000+600000
+ 33668 multiletter control sequences out of 15000+600000
  549049 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,12n,67p,824b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on c:\Users\pedro\map2110-modelagem/aula3.pdf (17 pages, 123053 bytes).
+Output written on c:\Users\pedro\map2110-modelagem/aula3.pdf (19 pages, 140595 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

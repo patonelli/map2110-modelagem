@@ -1,0 +1,124 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\title{Exercício produto vetorial}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{10 de abril}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section {Produto Vetorial}
+
+\begin{frame}{Definição do Produto Vetorial }
+ 
+ \begin{gather*}
+   \vec{a}=(a_1,a_2,a_3)\\
+   \vec{b}=(b_1,b_2,b_3)\\
+   \vec{a}\times \vec{b}=(a_2b_3-a_3b_2, a_3b_1-a_1b_3, a_1b_2-a_2b_1)
+ \end{gather*}
+
+\end{frame}
+
+\begin{frame}{Propriedades}
+  \begin{itemize}
+    \item $(\vec{a}\times \vec{b}) = - (\vec{b}\times \vec{a})$
+    \item $\vec{a}\times(\vec{b} + \vec{c})=\vec{a}\times \vec{b} + \vec{a}\times\vec{c}$
+    \item $\alpha(\vec{a}\times \vec{b})=\alpha\vec{a}\times \vec{b}$
+    \item $\|\vec{a}\times\vec{b}\|^2 =\|\vec{a}\|^2 \|\vec{b}\|^2 -(\vec{a}\cdot\vec{b})^2$  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Exercício 15 do Apostol}
+  Se $A$ e $B$ são vetores ortogonais e de norma $1$ em $V_3$. Seja $P$ um vetor
+  que satisfaz a equação $P\times B = A - P$. Mostre cada uma das afirmações abaixo:
+  \begin{itemize}
+    \item[a] $P$ é ortogonal a $B$ e mede $\sqrt{2}/2$.
+    \item[b] $P\text{, }B$ e $P\times B$ formam uma base de $V_3$.
+    \item[c]  $(P\times B)\times B = -P$
+    \item[d]  $P= \frac{1}{2}(A-A\times B)$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{solução}
+\begin{gather*}
+  P\times B = A-P \\ \pause 
+  (P\times B)\cdot B = (A-P)\cdot B = A\cdot B - P\cdot B \\ \pause 
+  P\cdot B = 0
+\end{gather*}
+\end{frame}
+
+\begin{frame}
+  Agora 
+  $$ P = A-P\times B $$
+  \pause 
+  Então
+  $$ \|P\|^2 =P\cdot P = A\cdot P $$
+\pause 
+Lembrando das propriedades do produto vetorial 
+$$ \|P\times B\|^2 = \|P\|^2 \|B\|^2 - P\cdot B=\| P \|^2 $$ e
+$$ \|P\|^2 = \|P\times B\|^2 = \|A-P\|^2 = \|A\|^2 -2A\cdot P +\|P\|^2 $$
+Então $ \cdot P=1/2$ e $\|P\|=\sqrt{2}/2$
+\end{frame}
+
+\section{Item b}
+
+\begin{frame}{Item b}
+  $P \text{ }B$ e $P\times B$ são vetores ortogonais, LI, portanto formam 
+  uma base de $V_3$
+\end{frame}
+
+\begin{frame}{Item c}
+ $$ (P\times B)\times B = aP+ bB +c(P\times B) $$
+ \pause 
+ $$ (P\times B)\times B = aP $$
+ \pause 
+ tomando a norma dos dois lados temos
+ $$\|(P\times B)\|\| B \|= |a| \|P\|$$
+ ou seja
+ $$ a = \pm 1$$
+ 
+
+\end{frame}
+
+\begin{frame}{item c e d}
+  Se $a=1$ teriamos 
+  $$(P\times B)\times B=P$$ e
+  $$P=(P\times B)\times B= (A-P)\times B = A\times B - (P\times B) = (A\times B) -A +P$$
+  oque acarretaria
+  $$ A\times B = A \implies A=0$$ 
+  contradizendo a hipótese.
+\pause
+então deve-se ter $a=-1$ e
+$$-P = (A\times B) -A +P$$
+e dai segue o resultados
+\end{frame}
+
+\end{document}

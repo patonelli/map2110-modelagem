@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  11 APR 2020 13:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  11 APR 2020 13:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -710,30 +710,30 @@ LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inpu
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 ) [3
 
-] [4
-
 ]
-<reta1.png, id=49, 18.82031pt x 0.7528pt>
-File: reta1.png Graphic file (type png)
-<use reta1.png>
-Package pdftex.def Info: reta1.png  used on input line 74.
-(pdftex.def)             Requested size: 18.82025pt x 0.75279pt.
- [5
+<reta2.png, id=41, 127.97812pt x 95.6072pt>
+File: reta2.png Graphic file (type png)
+<use reta2.png>
+Package pdftex.def Info: reta2.png  used on input line 72.
+(pdftex.def)             Requested size: 127.9778pt x 95.60695pt.
+ [4
 
- <c:/Users/pedro/map2110-modelagem/reta1.png>] [6
+ <c:/Users/pedro/map2110-modelagem/reta2.png>] [5
+
+] [6
 
 ]
 <conica1.png, id=62, 272.51813pt x 235.63031pt>
 File: conica1.png Graphic file (type png)
 <use conica1.png>
-Package pdftex.def Info: conica1.png  used on input line 90.
+Package pdftex.def Info: conica1.png  used on input line 93.
 (pdftex.def)             Requested size: 272.51746pt x 235.62973pt.
  [7
 
  <c:/Users/pedro/map2110-modelagem/conica1.png>]
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/m/n' instead on input line 103.
+(Font)              using `T1/cmss/m/n' instead on input line 106.
 
 [8
 
@@ -741,7 +741,7 @@ LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
 <conica2.png, id=75, 205.5178pt x 233.37187pt>
 File: conica2.png Graphic file (type png)
 <use conica2.png>
-Package pdftex.def Info: conica2.png  used on input line 107.
+Package pdftex.def Info: conica2.png  used on input line 110.
 (pdftex.def)             Requested size: 205.5173pt x 233.37129pt.
  [9
 
@@ -761,15 +761,15 @@ Package pdftex.def Info: conica2.png  used on input line 107.
 <coni1.png, id=113, 433.62pt x 289.08pt>
 File: coni1.png Graphic file (type png)
 <use coni1.png>
-Package pdftex.def Info: coni1.png  used on input line 158.
+Package pdftex.def Info: coni1.png  used on input line 161.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 
-Overfull \hbox (126.32907pt too wide) in paragraph at lines 158--158
+Overfull \hbox (126.32907pt too wide) in paragraph at lines 161--161
 [][]  
  []
 
 
-Overfull \vbox (20.93266pt too high) detected at line 158
+Overfull \vbox (20.93266pt too high) detected at line 161
  []
 
 [16
@@ -778,15 +778,15 @@ Overfull \vbox (20.93266pt too high) detected at line 158
 <coni2.png, id=120, 433.62pt x 289.08pt>
 File: coni2.png Graphic file (type png)
 <use coni2.png>
-Package pdftex.def Info: coni2.png  used on input line 162.
+Package pdftex.def Info: coni2.png  used on input line 165.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 
-Overfull \hbox (126.32907pt too wide) in paragraph at lines 162--162
+Overfull \hbox (126.32907pt too wide) in paragraph at lines 165--165
 [][]  
  []
 
 
-Overfull \vbox (20.93266pt too high) detected at line 162
+Overfull \vbox (20.93266pt too high) detected at line 165
  []
 
 [17
@@ -807,11 +807,11 @@ Overfull \vbox (20.93266pt too high) detected at line 162
 \tf@snm=\write8
 \openout8 = `aula4.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
  (c:\Users\pedro\map2110-modelagem/aula4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
 Package rerunfilecheck Info: File `aula4.out' has not changed.
 (rerunfilecheck)             Checksum: 351DCE9DEF73FE14B25EB2CA63211EC2;45.
 
@@ -828,7 +828,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  58i,12n,67p,824b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on c:\Users\pedro\map2110-modelagem/aula4.pdf (20 pages, 146633 bytes).
+Output written on c:\Users\pedro\map2110-modelagem/aula4.pdf (20 pages, 149879 bytes).
 PDF statistics:
  193 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams

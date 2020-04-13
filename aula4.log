@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  11 APR 2020 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  13 APR 2020 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -697,59 +697,89 @@ Dictionary: translator-theorem-dictionary, Language: English
 {c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 64.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 61.
  (c:/texlive/2019/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 ) [3
 
 ]
-<reta2.png, id=41, 127.97812pt x 95.6072pt>
+<conica3.png, id=41, 433.62pt x 289.08pt>
+File: conica3.png Graphic file (type png)
+<use conica3.png>
+Package pdftex.def Info: conica3.png  used on input line 67.
+(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+Overfull \hbox (126.32907pt too wide) in paragraph at lines 67--67
+[][]  
+ []
+
+
+Overfull \vbox (20.93266pt too high) detected at line 67
+ []
+
+[4
+
+ <c:/Users/pedro/map2110-modelagem/conica3.png>]
+<conica4.png, id=49, 433.62pt x 289.08pt>
+File: conica4.png Graphic file (type png)
+<use conica4.png>
+Package pdftex.def Info: conica4.png  used on input line 71.
+(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+Overfull \hbox (126.32907pt too wide) in paragraph at lines 71--71
+[][]  
+ []
+
+
+Overfull \vbox (20.93266pt too high) detected at line 71
+ []
+
+[5
+
+ <c:/Users/pedro/map2110-modelagem/conica4.png>]
+<reta2.png, id=56, 127.97812pt x 95.6072pt>
 File: reta2.png Graphic file (type png)
 <use reta2.png>
-Package pdftex.def Info: reta2.png  used on input line 72.
+Package pdftex.def Info: reta2.png  used on input line 82.
 (pdftex.def)             Requested size: 127.9778pt x 95.60695pt.
- [4
+ [6
 
- <c:/Users/pedro/map2110-modelagem/reta2.png>] [5
+ <c:/Users/pedro/map2110-modelagem/reta2.png>] [7
 
-] [6
+] [8
 
 ]
-<conica1.png, id=62, 272.51813pt x 235.63031pt>
+<conica1.png, id=77, 272.51813pt x 235.63031pt>
 File: conica1.png Graphic file (type png)
 <use conica1.png>
-Package pdftex.def Info: conica1.png  used on input line 93.
+Package pdftex.def Info: conica1.png  used on input line 103.
 (pdftex.def)             Requested size: 272.51746pt x 235.62973pt.
- [7
+ [9
 
  <c:/Users/pedro/map2110-modelagem/conica1.png>]
 
 LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/m/n' instead on input line 106.
+(Font)              using `T1/cmss/m/n' instead on input line 116.
 
-[8
+[10
 
 ]
-<conica2.png, id=75, 205.5178pt x 233.37187pt>
+<conica2.png, id=89, 205.5178pt x 233.37187pt>
 File: conica2.png Graphic file (type png)
 <use conica2.png>
-Package pdftex.def Info: conica2.png  used on input line 110.
+Package pdftex.def Info: conica2.png  used on input line 120.
 (pdftex.def)             Requested size: 205.5173pt x 233.37129pt.
- [9
+ [11
 
- <c:/Users/pedro/map2110-modelagem/conica2.png>] [10
-
-] [11
-
-] [12
+ <c:/Users/pedro/map2110-modelagem/conica2.png>] [12
 
 ] [13
 
@@ -757,45 +787,49 @@ Package pdftex.def Info: conica2.png  used on input line 110.
 
 ] [15
 
+] [16
+
+] [17
+
 ]
-<coni1.png, id=113, 433.62pt x 289.08pt>
+<coni1.png, id=127, 433.62pt x 289.08pt>
 File: coni1.png Graphic file (type png)
 <use coni1.png>
-Package pdftex.def Info: coni1.png  used on input line 161.
+Package pdftex.def Info: coni1.png  used on input line 171.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 
-Overfull \hbox (126.32907pt too wide) in paragraph at lines 161--161
+Overfull \hbox (126.32907pt too wide) in paragraph at lines 171--171
 [][]  
  []
 
 
-Overfull \vbox (20.93266pt too high) detected at line 161
+Overfull \vbox (20.93266pt too high) detected at line 171
  []
 
-[16
+[18
 
  <c:/Users/pedro/map2110-modelagem/coni1.png>]
-<coni2.png, id=120, 433.62pt x 289.08pt>
+<coni2.png, id=134, 433.62pt x 289.08pt>
 File: coni2.png Graphic file (type png)
 <use coni2.png>
-Package pdftex.def Info: coni2.png  used on input line 165.
+Package pdftex.def Info: coni2.png  used on input line 175.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 
-Overfull \hbox (126.32907pt too wide) in paragraph at lines 165--165
+Overfull \hbox (126.32907pt too wide) in paragraph at lines 175--175
 [][]  
  []
 
 
-Overfull \vbox (20.93266pt too high) detected at line 165
+Overfull \vbox (20.93266pt too high) detected at line 175
  []
 
-[17
+[19
 
- <c:/Users/pedro/map2110-modelagem/coni2.png>] [18
+ <c:/Users/pedro/map2110-modelagem/coni2.png>] [20
 
-] [19
+] [21
 
-] [20
+] [22
 
 ]
 \tf@nav=\write6
@@ -807,11 +841,11 @@ Overfull \vbox (20.93266pt too high) detected at line 165
 \tf@snm=\write8
 \openout8 = `aula4.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
  (c:\Users\pedro\map2110-modelagem/aula4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `aula4.out' has not changed.
 (rerunfilecheck)             Checksum: 351DCE9DEF73FE14B25EB2CA63211EC2;45.
 
@@ -820,18 +854,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18646 strings out of 480994
- 348587 string characters out of 5916033
+ 18667 strings out of 480994
+ 348844 string characters out of 5916033
  612673 words of memory out of 5000000
- 33645 multiletter control sequences out of 15000+600000
+ 33660 multiletter control sequences out of 15000+600000
  549049 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,12n,67p,824b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on c:\Users\pedro\map2110-modelagem/aula4.pdf (20 pages, 149879 bytes).
+Output written on c:\Users\pedro\map2110-modelagem/aula4.pdf (22 pages, 165434 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

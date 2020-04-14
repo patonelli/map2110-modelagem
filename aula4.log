@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  13 APR 2020 10:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.3)  14 APR 2020 09:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -732,17 +732,8 @@ Overfull \vbox (20.93266pt too high) detected at line 67
 File: conica4.png Graphic file (type png)
 <use conica4.png>
 Package pdftex.def Info: conica4.png  used on input line 71.
-(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
-
-Overfull \hbox (126.32907pt too wide) in paragraph at lines 71--71
-[][]  
- []
-
-
-Overfull \vbox (20.93266pt too high) detected at line 71
- []
-
-[5
+(pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
+ [5
 
  <c:/Users/pedro/map2110-modelagem/conica4.png>]
 <reta2.png, id=56, 127.97812pt x 95.6072pt>
@@ -862,7 +853,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  58i,12n,67p,824b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on c:\Users\pedro\map2110-modelagem/aula4.pdf (22 pages, 165434 bytes).
+Output written on c:\Users\pedro\map2110-modelagem/aula4.pdf (22 pages, 165445 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  151 compressed objects within 2 object streams

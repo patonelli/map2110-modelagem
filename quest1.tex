@@ -36,54 +36,93 @@
 
 \begin{frame}{}
  Seja $X$ um  de $V_n$ então $X\cdot X =0$ se, e somente se $X=0$.
+ \textcolor{red}{ Verdadeiro. Pois $X\cdot X= \sum_{i=1}^n x_i^2$ }
 \end{frame}
 
 \begin{frame}{}
 $$X\cdot Y \leq \|X\|\|Y\|$$
+
+\textcolor{red}{Verdadeiro. É o teorema de Cauchy-Schwarz}
 \end{frame}
 
 \begin{frame}
   $\{ (1,2), (1,0), (0,1)\}$ é um conjunto linearmente independente.
+
+  \textcolor{red}{
+    Falso pois $(1,2) = (1,0) + 2(0,1)$
+  }
 \end{frame}
 
 \begin{frame}{}
 
   $(0-,1, 1)$ pertence ao espaço gerado pelos vetores ${(1,2,0), (0,-1, 0)}$
 
+  \textcolor{red}{
+    Falso, pois o espaço gerado pelos vetores tem zero na última coordenada.
+  }
 \end{frame}
 
 \begin{frame}
   Os vetores $\mathbf{e}_1 = 2\mathbf{i}+\mathbf{j}$ $\mathbf{e_2}= -\mathbf{j}$ e
   $\mathbf{e_3}=\mathbf{j}+\mathbf{k}$ formam uma base de $V_3$
+
+  \textcolor{red}{
+    Verdadeiro. Pois são três vetores LI.
+    \begin{gather*}
+      a\mathbf{e}_1  + b\mathbf{e}_2 +c\mathbf{e}_3 = 0 \implies \\
+      2a\mathbf{i} + (a-b+c)\mathbf{j} + c \mathbf{k} = 0 \implies \\
+      a=b=c=0
+    \end{gather*}
+  }
 \end{frame}
 
 \begin{frame}
   As retas $r$ e $s$
-  com $r$ definida pela equação vetorial  $r: (1,0,1) + \alpha (1,2,-1)$ é parralela 
+  com $r$ definida pela equação vetorial  $r: (1,0,1) + \alpha (1,2,-1)$ é paralela 
   à reta $s$ definida pela equação paramétrica
   \begin{gather*}
     x= 2 + 2\lambda \\
     y= -1 + 4\lambda \\
     z= 1  - 2\lambda
   \end{gather*}
+
+  \textcolor{red}{Verdadeiro, pois $(1,2,-1)$ é o vetor de direção das duas retas.}
 \end{frame}
 
 
 \begin{frame}{}
   Se $X$ é um vetor de $V_3$ então $X\times X = 0$ se, e somente se $X=0$
+
+  \textcolor{red}{Falso, $X\times X=0 \forall X\in V_3.$}
+
 \end{frame}
 
 \begin{frame}{}
  Se os vetores $A$ e $B$ de $V_3$ são LI então $\{A,B,A\times B\}$ é uma 
  base de $V_3$
+
+ \textcolor{red}{Verdadeiro.
+ \begin{gather*}
+   aA +bB + c(A\times B)=0 \\
+   aA\cdot(A\times B) +bB\cdot(A\times B) + c(A\times B)\cdot(A\times B)=0\\
+   c\|A\times b\|^2 = 0 \implies c=0\\
+   aA+bB=0 \implies a=b=0
+ \end{gather*}}
+
 \end{frame}
 
-\begin{frame}
+\begin{frame} 
  A equação $3x-y+ 2z =4$ é a equação de um plano que passa pela origem de $V_3$
-\end{frame}
+\textcolor{red}{Falso}
+ \end{frame}
+
+
 
 \begin{frame}
   O vetor $(3,-1,2)$ é ortogonal ao plano de equação $3x-y+ 2z =4$
+
+  \textcolor{red}{Verdadeiro.}
+
 \end{frame}
 
 \end{document}

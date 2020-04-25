@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\parindent=0pt
+
+ \addtolength{\textheight}{3.5cm}
+ \addtolength{\oddsidemargin}{-1cm}
+ \addtolength{\evensidemargin}{-1cm}
+ \addtolength{\textwidth}{2cm}
+ \addtolength{\topmargin}{-2.0cm}
+\newcounter{questao}
+\newcommand{\quest}{\stepcounter{questao}{\bf \arabic{questao}.\ }}
+
+\begin{document}
+\hrule
+ {  \sf  Lista 3 - Eliminação de Gauss  \hfill \fbox{L3-2020}}
+\hrule
+
+\vspace{0.5cm}
+
+\thispagestyle{empty}
+\fontsize{14}{16}\selectfont
+
+\quest Encontre $a,\, $ $b$ e $c$ tal que 
+$$ \frac{x^2 -x + 3}{(x^2+2)(2x-1)}=\frac{ax+b}{x^2+2}+\frac{c}{2x-1}$$
+
+\vspace{0.3cm}
+
+\quest Encontre todas as soluções do seguinte sistema linear
+
+\begin{align*}
+   x_1 - x_2 +x_3 -2x_4 & =1 \\
+   -x_1 +x_2 +x_3 + x_4 & =-1 \\
+   -x_1 +2x_2 + 3x_3 -x_4 & =2\\ 
+   x_1 -x_2 +2x_3 +x_4 & =1
+\end{align*}
+
+\vspace{0.3cm}
+
+\quest Prove ou dê um contra-exemplo da seguinte asserção: Se $C$ é a matriz dos coeficientes de um sistema de 
+$n$ equações e $n$ incógnitas, e o sistema não tem solução, então aplicando a Eliminação de Gauss à matriz $C$ 
+obtemos uma matriz triangular com zeros na diagonal principal.
+
+\vspace{0.3cm}
+
+\quest Para que valores dos parâmetros $a,$ $b$ e $c$ o sistema abaixo não tem solução
+\begin{align*}
+       3x + y -z &=a \\
+    x -y +2z & =b\\ 
+    5x + 3y -4z & =c
+ \end{align*}
+
+\vspace{0.3cm}
+
+\quest Dados os três pontos do plano $V_2$ $A=(0,1)$ $B=(1,1)$ e $C=(2,3)$ encontrar os parâmetros
+$a,$ $b$ e $c$ tal que o gráfico da parábola $y=ax^2+ bx + c$ passe pelos pontos $A,$ $B$ e $C$.
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

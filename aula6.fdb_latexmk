@@ -1,15 +1,15 @@
 # Fdb version 3
-["xdvipdfmx"] 1587925848 "c:/Users/paton/aulas/aula6.xdv" "c:/Users/paton/aulas/aula6.pdf" "c:/Users/paton/aulas/aula6" 1587925849
-  "c:/Users/paton/aulas/aula6.xdv" 1587925848 45004 00b96ab6685a471dd1308706497b9b3f "xelatex"
+["xdvipdfmx"] 1587994225 "c:/Users/paton/map2110-modelagem/aula6.xdv" "c:/Users/paton/map2110-modelagem/aula6.pdf" "c:/Users/paton/map2110-modelagem/aula6" 1587994227
+  "c:/Users/paton/map2110-modelagem/aula6.xdv" 1587994225 46316 fccd8cdd20fd0e5613e52b7046389ad7 "xelatex"
   (generated)
-  "c:/Users/paton/aulas/aula6.pdf"
-["xelatex"] 1587925846 "c:/Users/paton/aulas/aula6.tex" "c:/Users/paton/aulas/aula6.xdv" "aula6" 1587925849
-  "aula6.aux" 1587925848 4319 be6044ac71a15b799a2895a5e999a7d2 "xelatex"
-  "aula6.nav" 1587925848 2204 97a237c41d8def7f8a3b383e12caa979 "xelatex"
-  "aula6.out" 1587925848 55 9f4bc60657b5d19148f10a60eae8294b "xelatex"
-  "aula6.tex" 1587925843 8442 1012f64a4abf57f01f7c59fb02ddd569 ""
-  "c:/Users/paton/aulas/aula6.aux" 1587925848 4319 be6044ac71a15b799a2895a5e999a7d2 ""
-  "c:/Users/paton/aulas/aula6.tex" 1587925843 8442 1012f64a4abf57f01f7c59fb02ddd569 ""
+  "c:/Users/paton/map2110-modelagem/aula6.pdf"
+["xelatex"] 1587994223 "c:/Users/paton/map2110-modelagem/aula6.tex" "c:/Users/paton/map2110-modelagem/aula6.xdv" "aula6" 1587994227
+  "aula6.aux" 1587994225 4474 695d3e03475c6fd83cac9352a478a804 "xelatex"
+  "aula6.nav" 1587994225 2297 0f747ac7eb5c23de5b0b847af49f8fa1 "xelatex"
+  "aula6.out" 1587994225 55 9f4bc60657b5d19148f10a60eae8294b "xelatex"
+  "aula6.tex" 1587994222 8519 1d34a54c9c1e2bc038cdf12b4052e20e ""
+  "c:/Users/paton/map2110-modelagem/aula6.aux" 1587994225 4474 695d3e03475c6fd83cac9352a478a804 ""
+  "c:/Users/paton/map2110-modelagem/aula6.tex" 1587994222 8519 1d34a54c9c1e2bc038cdf12b4052e20e ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1587178237 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1587181552 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1587176800 1004 54797486969f23fa377b128694d548df ""
@@ -198,13 +198,14 @@
   "c:/texlive/2020/texmf-dist/web2c/texmf.cnf" 1587178751 39451 60d7debd9ef8ece44cbe965493576c2d ""
   "c:/texlive/2020/texmf-var/web2c/xetex/xelatex.fmt" 1587181841 4769803 9d33e7e6e031139c1fcee48dfc857eb8 ""
   "c:/texlive/2020/texmf.cnf" 1587181592 673 4ae7b2f49cee444c5343a45b5d0f169c ""
+  "gausselim.png" 1587994004 274301 c8b5d1d7f7ff78444ee37fe606273ade ""
   (generated)
-  "aula6.aux"
-  "c:/Users/paton/aulas/aula6.xdv"
-  "c:/Users/paton/aulas/aula6.log"
-  "aula6.snm"
-  "aula6.nav"
-  "aula6.xdv"
   "aula6.out"
-  "aula6.log"
+  "c:/Users/paton/map2110-modelagem/aula6.log"
   "aula6.toc"
+  "aula6.nav"
+  "c:/Users/paton/map2110-modelagem/aula6.xdv"
+  "aula6.log"
+  "aula6.snm"
+  "aula6.aux"
+  "aula6.xdv"

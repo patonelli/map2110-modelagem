@@ -1,0 +1,340 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+\title[Inversas]{Matrizes Inversas}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{12 de maio}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+
+\section{Inversas de Matrizes}
+
+\begin{frame}{Problema da Inversão}
+
+  $I_n =[\delta_{ij}]$ é a matriz identidade $n\times n$. Ela tem a seguinte propriedade importante:
+  para toda matriz $A$ de dimensão $m \times n$ vale:
+  $$ I_m A = A \text{ e } AI_n =A $$ ou seja, ela é um elemento neutro na multiplicação de matrizes.
+  O problema que podemos colocar é será que para esta matriz $A$ existe uma matriz $B$ de dimensão $n \times m$ tal que
+  $$ A.B = I_m \text { e } B.A = I_n \text{ (?)}$$
+  
+ 
+\end{frame}
+
+\begin{frame}{Exemplo}
+  Vamos achar uma solução para
+  \begin{gather*}
+    \begin{bmatrix}
+      1 & 0 & 1 \\
+      1 & -1 & 1
+    \end{bmatrix}B= \begin{bmatrix}
+      1 & 0 \\ 0 & 1
+    \end{bmatrix}
+  \end{gather*}
+  $$\begin{array}{|ccc|cc|} 
+    1 & 0 & 1 & 1 & 0 \\
+    1 & -1 & 1 & 0 & 1
+  \end{array} \rightarrow 
+  \begin{array}{|ccc|cc|} 
+    1 & 0 & 1 & 1 & 0 \\
+    0 & -1 & 0 & -1 & 1
+  \end{array} \rightarrow \cdots
+  $$
+  $$\begin{array}{|ccc|cc|} 
+    1 & 0 & 1 & 1 & 0 \\
+    0 & 1 & 0 & 1 & -1
+  \end{array} \implies B= \begin{bmatrix}
+    1-t & -s \\ 1 & -1 \\ t & s
+  \end{bmatrix} $$
+
+  
+\end{frame}
+
+\begin{frame}{}
+  Agora vamos verificar se 
+  $$ 
+  \begin{bmatrix}
+    1-t & -s \\ 1 & -1 \\ t & s
+  \end{bmatrix}\begin{bmatrix}
+    1 & 0 & 1 \\
+    1 & -1 & 1
+  \end{bmatrix}=I_3$$
+  $$ \begin{bmatrix}
+    1-t-s & s & 1 -t -s \\
+    0 & 1 & 0 \\
+    t+s & -s & t+s
+  \end{bmatrix} = I_3 \text{ não é possível}$$
+
+\end{frame}
+
+\begin{frame}{Definição da matriz inversa}
+
+De forma geral não é possível definir uma inversa para matrizes $m\times n$ se $m\neq n$. Vamos definir então para
+matrizes quadradas $n\times n$:
+
+Uma matriz $A$ é invertível se existe uma matriz $B$ de mesma dimensão (claro) tal que:
+$$ AB=BA = I_n $$
+Uma matriz $B$ que satisfaz esta condição chamaremos de inversa de $A$ e denotaremos por $A^{-1}$
+  
+  \end{frame} 
+
+
+\begin{frame}{Unicidade da inversa }
+  É importante que a inversa seja única. Então:
+  Se $B$ e $C$ são duas matrizes satisfazendo as condições da inversa de $A$ então temos
+  $$ C= CI_n = C(AB)=(CA)B = I_nB=B $$
+ 
+  
+\end{frame}
+
+\begin{frame}{ Exemplo }
+
+  \begin{gather*}
+   A= \begin{bmatrix}
+      2 & 1 \\ 1 & 1 
+    \end{bmatrix} \text{ então } A^{-1}=\begin{bmatrix}
+      1 & -1 \\ -1 & 2
+    \end{bmatrix} \\
+    A= \begin{bmatrix}
+      0 & 1 \\
+      0 & -2 
+    \end{bmatrix} \text{ então  não existe } A^{-1}
+  \end{gather*}
+ nem todas as matrizes têm inversas 
+\end{frame}
+
+\begin{frame}{Como tentar achar a inversa de uma matriz}
+Achar a matriz inversa de 
+$$ A = \begin{bmatrix}
+  1 & 2 & 0 \\
+  2 & 1 & 1 \\
+  -1 & 0 & 0
+\end{bmatrix}$$
+Eliminação de Gauss (e Jordan)
+$$ 
+\begin{array}{|ccc|ccc|c}
+  1&2&0&1&0&0& \\
+  2&1&1&0&1&0& \textcolor{red}{L_2 -2L_1}\\
+  -1&0&0&0&0&1&\textcolor{red}{L_3 + L_1}
+\end{array}\rightarrow
+$$
+\end{frame}
+
+\begin{frame}{Como antes}
+  \begin{gather*} 
+  \begin{array}{|ccc|ccc|c}
+    1&2&0&1&0&0& \\
+    0&-3&1&-2&1&0& \\
+    0&2&0&1&0&1&\textcolor{red}{L_3 + \frac{2}{3}L_2}
+  \end{array}\rightarrow\\
+\begin{array}{|ccc|ccc|c}
+    1&2&0&1&0&0& \\
+    0&-3&1&-2&1&0& \textcolor{red}{-1/3L_2} \\
+    0&0&2/3&-1/3&2/3&1& \textcolor{red}{3/2L_3}
+  \end{array}\rightarrow\\
+  \begin{array}{|ccc|ccc|c}
+    1&2&0&1&0&0& \\
+    0&1&-1/3&2/3&-1/3&0& \textcolor{blue}{L_2+1/3L_3} \\
+    0&0&1&-1/2&1&3/2& 
+  \end{array}\rightarrow
+\end{gather*}
+ \end{frame}
+
+\begin{frame}{Agora a parte pra achar a escalonada reduzida}
+\begin{gather*}
+  \begin{array}{|ccc|ccc|c}
+    1&2&0&1&0&0&\textcolor{blue}{L_1-2L_2} \\
+    0&1& 0& 1/2&0& 1/2&  \\
+    0&0&1&-1/2&1&3/2& 
+  \end{array}\rightarrow \\
+    \begin{array}{|ccc|ccc|c}
+      1&0&0&0&0&-1&\\\
+      0&1& 0& 1/2&0& 1/2&  \\
+      0&0&1&-1/2&1&3/2& 
+    \end{array}\rightarrow\\
+    A^{-1} = \frac{1}{2}\begin{bmatrix}
+      0 & 0 & -2 \\
+      1 & 0 & 1 \\
+      -1 & 2 & 3
+    \end{bmatrix}
+  \end{gather*}
+\end{frame}
+
+\begin{frame}{teste}
+  $$
+  \begin{array}{|ccc|ccc|} \hline
+    & & &0 &0 & -2\\
+    & &\frac{1}{2} \times &1 &0 & 1\\
+    & & &-1 & 2& 3 \\ \hline
+   1 &2 & 0&1 & 0& 0\\
+   2 & 1& 1& 0& 1& 0\\
+   -1 & 0& 0&0 & 0& 1\\ \hline
+  \end{array}
+  $$
+\end{frame}
+\begin{frame}{Falso ou Verdadeiro}
+
+  \begin{block}{1}
+ Uma matriz $A$ de dimensão $n\times n$ é invertível
+ se e somente se a forma escalonada reduzida é a identidade.
+  \end{block}
+
+  \textcolor{blue}{ Verdadeiro, basta estudar o exemplo acima. Só não haverá inversa quando a forma escalonada tiver
+  uma linha de zeros}
+  
+\end{frame}
+
+\begin{frame}
+  Lista das operações elementares que fizemos acima:
+  \begin{itemize}
+    \item $L_2 -2L_1$
+    \item $L_3 + L_1$
+    \item $L_3 + 3/2L_2$
+    \item $-1/3L_2$
+    \item $3/2L_3$
+    \item $L_2+1/3L_3$
+    \item $L_1 -L_2$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{correspondem às matrizes elementares}
+  \begin{gather*}
+1-  \begin{pmatrix}
+    1 & 0 & 0 \\ 
+    -2 & 1 & 0 \\
+    0 & 0 & 1
+  \end{pmatrix}\text{ }2- \begin{pmatrix}
+    1 & 0 & 0 \\ 
+    0 & 1 & 0 \\
+    1 & 0 & 1
+  \end{pmatrix}\text{ }3- \begin{pmatrix}
+    1 & 0 & 0 \\ 
+    0 & 1 & 0 \\
+    0 & 3/2 & 1
+  \end{pmatrix} \\
+  \text{ }4- \begin{pmatrix}
+    1 & 0 & 0 \\ 
+    0 & -1/3 & 0 \\
+    0 & 0 & 1
+  \end{pmatrix}\text{ }5- \begin{pmatrix}
+    1 & 0 & 0 \\ 
+    0 & 1 & 0 \\
+    0 & 0 & 3/2
+  \end{pmatrix}\text{ }6- \begin{pmatrix}
+    1 & 0 & 0 \\ 
+    0 & 1 & 1/3 \\
+    0 & 0 & 1
+  \end{pmatrix} \\
+  \text{ }7- \begin{pmatrix}
+    1 & -1 & 0 \\ 
+    0 & 1 & 0 \\
+    0 & 0 & 1
+  \end{pmatrix}
+  \end{gather*}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Inversa de uma matriz $2\times 2$}
+  Se $A=\begin{bmatrix}
+    a & b \\ c & d
+  \end{bmatrix}$ é uma matriz vamos chamar de 
+  $\det(A) = ad -cb$. Se $\det(A)\neq 0$ 
+  $$ A^{-1}=\frac{1}{\det(A)} \begin{bmatrix}
+    d & -b \\
+    -c & a
+  \end{bmatrix}$$
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{2}
+  Se $A$ e $B$ são duas matrizes invertíveis de dimensão
+  $n\times n$ então $(AB)^{-1} = A^{-1}B^{-1}$
+
+  \textcolor{blue}{Falso. A fórmula correta é $(AB)^{-1}=B^{-1}A^{-1}$}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{ Matrizes Elementares são invertíveis}
+
+$$ A= \begin{bmatrix}
+  1 & 0 & 0 \\
+  2 & 1 & 0 \\
+  0 & 0 & 1
+\end{bmatrix}$$
+qual é a inversa de $A$ \pause 
+\textcolor{blue}{
+$$ A= \begin{bmatrix}
+  1 & 0 & 0 \\
+  -2 & 1 & 0 \\
+  0 & 0 & 1
+\end{bmatrix}$$}
+\end{frame}
+
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{3}
+ Se $A$ é uma matriz $n\times n$ invertível então a equação 
+ $$ A\mathbf{x} = \mathbf{b} $$
+ tem uma única solução para qualquer $\mathbf{b}$ de dimensão $n\times 1$, ou seja, um vetor né?
+\end{block}
+
+\textcolor{blue}{Verdadeiro: $x = A^{-1}b$ um tipo de lei do cancelamento.}
+\end{frame}
+
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{4}
+    Se $A$ é uma matriz $m\times n$, então $A.A^T$ é uma matriz quadrada 
+  
+    \textcolor{blue}{Verdadeiro. Se você não entendeu por quê, leia novamente a primeira seção do capítulo 2 do 
+    Nicholson}
+\end{block}
+\end{frame}   
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{5}
+  Se $A$ é uma matriz $2\times 2$ e $A^2=-I_2$ então $A$ tem algum elemento complexo.
+\end{block}
+
+\textcolor{blue}{Falso. A matriz $A=\begin{pmatrix}
+  0 & 1 \\ -1 & 0 
+\end{pmatrix}$ satisfaz essa propriedade embora só tenha elementos reais.}
+\end{frame}
+
+
+
+\end{document}

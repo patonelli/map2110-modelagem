@@ -1,0 +1,301 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+\title[Transformações]{Transformações Lineares}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{19 de maio}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Espaço $V_n$ como espaço de matrizes}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[red,thick,->] (0,0,0) -- (0,2,0);
+    \draw[green,thick,->] (0,0,0) -- (2,0,0);
+    \draw[blue,thick,->] (0,0,0) -- (0,0,2);
+   \draw[thick,->] (0,0,0) -- (4,2.5,5) node[anchor=west] {
+     $\begin{bmatrix}
+     x_1 \\ x_2 \\ x_3
+   \end{bmatrix}\sim (x_1,x_2,x_3)$};
+   \draw[red, dashed] (4,2.5,5) -- (4,0,5);
+   \draw[green, dashed] (4,0,5) -- (0,0,5);
+   \draw[green, dashed] (0,0,0) -- (4,0,0);
+   \draw[blue,dashed] (4,0,5) -- (4,0,0);
+   \draw[blue, dashed] (0,0,0) -- (0,0,5);
+   % imagem de T_A
+   \draw[red,thick,->] (6,0,0) -- (6,2,0);
+    \draw[green,thick,->] (6,0,0) -- (8,0,0);
+    \draw[blue,thick,->] (6,0,0) -- (6,0,2);
+   \draw[thick,->] (6,0,0) -- (7,3,2) node[anchor=west] {
+     $A\begin{bmatrix}
+     x_1 \\ x_2 \\ x_3
+   \end{bmatrix}\sim T_A \mathbf{x}$};
+   %\draw (6,-3) grid (12,3);
+\end{tikzpicture}
+\end{center}
+ Se $A$ é uma matriz $m\times n$, ela induz uma transformação
+ $T_A:\mathbb{R}^n \to \mathbb{R}^m $ dada por 
+ $T_A(\mathbf{x})=A\mathbf{x}$ que é a transformação gerada por $A$.
+\end{frame}
+
+\begin{frame}{Exemplo}
+  
+$A=\begin{pmatrix}
+  0 & -2 \\ 2 & 0
+\end{pmatrix}$ Então temos:
+$$ T_A(x_1, x_2) = \begin{pmatrix}
+  0 & -2 \\ 2 & 0
+\end{pmatrix} \textcolor{blue}{\begin{bmatrix}
+  x_1 \\ x_2
+\end{bmatrix}} = \textcolor{red}{\begin{bmatrix}
+  -2x_2 \\ 2x_1
+\end{bmatrix}} = (-2x_2, 2x_1)$$
+\begin{center}
+\begin{tikzpicture}
+  \draw[gray!60,-latex] (0,0) -- (0,1);
+  \draw[gray!60,-latex] (0,0) -- (1,0);
+  \draw[blue,-latex] (0,0) -- (1,1);
+  \draw[gray!60,-latex] (5,0) -- (5,1);
+  \draw[gray!60,-latex] (5,0) -- (6,0);
+  \draw[red,-latex] (5,0) -- (3,2);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Propriedades das Transformações geradas por matrizes}
+  Seja $A$ uma matriz $m\times n$ e identificamos
+  $\mathbb{R}^n$ com o conjunto das matrizes de $n$ linhas e
+  $1$ coluna de números reais, e da mesma forma $\mathbb{R}^m$ será
+  o conjunto das matrizes reais com $m$ linhas e $1$ coluna.
+  A tranformação $T_A:\mathbb{R}^n \to \mathbb{R}^m$, como definida acima
+  tem as seguintes Propriedades
+  \begin{enumerate}
+    \item $T_A(\mathbf{x}+\mathbf{y}) = T_A(\mathbf{x}) + T_A(\mathbf{y})$
+    \item $T_A(\alpha \mathbf{x})=\alpha T_A(\mathbf{x})$
+  \end{enumerate}
+  Isso quer dizer que $T_A$ é uma transformação linear.
+\end{frame}
+
+\begin{frame}{Exemplo}
+  $A=\begin{pmatrix}
+    0 & 1 \\ 3 & 1
+    \end{pmatrix}$ $\mathbf{x}=\begin{bmatrix}
+      1 \\ -1
+    \end{bmatrix} \text{ e } \mathbf{y} = \begin{bmatrix}
+      2 \\ 1
+    \end{bmatrix} \implies \mathbf{x}+ \mathbf{y}=\begin{bmatrix}
+      3 \\ 0
+    \end{bmatrix}$ Então
+
+  $T_A(\mathbf{x}+\mathbf{y}) = \begin{pmatrix}
+    0 & 1 \\ 3 & 1
+    \end{pmatrix}\begin{bmatrix}
+      3 \\ 0
+    \end{bmatrix} = \begin{bmatrix}
+      0 \\ 9
+    \end{bmatrix}$
+$T_A(\mathbf{x}) + T_A(\mathbf{y}) = \begin{pmatrix}
+  0 & 1 \\ 3 & 1
+  \end{pmatrix}\begin{bmatrix}
+    1 \\ -1
+  \end{bmatrix} + \begin{pmatrix}
+    0 & 1 \\ 3 & 1
+    \end{pmatrix}\begin{bmatrix}
+      2 \\ 1
+    \end{bmatrix}= \begin{bmatrix}
+      -1 \\ 2 
+    \end{bmatrix} + \begin{bmatrix}
+      1 \\ 7
+    \end{bmatrix} = \begin{bmatrix}
+      0 \\ 9
+    \end{bmatrix}$
+
+\end{frame}
+
+\begin{frame}{Obtendo a matriz $A$ a partir da transformação}
+
+  Em $\mathbb{R}^n$ vamos considerar o seguinte conjunto de vetores
+  $\{\mathbf{e}_1, \dots, \mathbf{e}_n \}$ dados por
+
+  $$ \mathbf{e}_1 = \begin{bmatrix}
+    1 \\ 0 \\\vdots\\ 0 \\ 0
+  \end{bmatrix}, \dots, \mathbf{e}_j = \begin{bmatrix}
+    0 \\ \vdots \\ 1  \\ \vdots \\ 0
+  \end{bmatrix} \text{ com o } 1 \text{ na linha } j$$
+
+  \begin{gather*}
+  T_A(\mathbf{e}_j) = A.\mathbf{e}_j = \begin{bmatrix}
+    a_{1j} \\ \vdots \\ a_{mj} 
+  \end{bmatrix} 
+   \text{ com } A=[a_{ij}]  \text{ uma matriz } m\times n
+ \end{gather*}
+
+\end{frame}
+
+\begin{frame}{Transformações Lineares} 
+  De forma geral $T: \mathbb{R}^n \to \mathbb{R}^m$ é linear
+  quando satisfaz:
+  \begin{enumerate}
+    \item $T(\mathbf{x}+\mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y}) (\forall \mathbf{x}\in \mathbb{R}^n)(\forall \mathbf{y}\in \mathbb{R}^n) $
+    \item $T(\alpha \mathbf{x})=\alpha T(\mathbf{x})(\forall \mathbf{x}\in \mathbb{R}^n) (\forall \mathbf{\alpha}\in \mathbb{R})$
+  \end{enumerate}
+  Então podemos achar a matriz $A m \times n$ que gera $T$ sabendo que $T(\mathbf{e}_j)$ será a $j$-ésima coluna de $A$.
+  $$
+  \begin{array}{c|ccccc|}
+     & T(\mathbf{e}_1)&\cdots &T(\mathbf{e}_j)&\cdots& T(\mathbf{e}_n) \\ \hline
+     & a_{11} & \cdots & a_{1j} & \cdots & a_{1n} \\
+     & \vdots & \cdots & \vdots & \cdots & \vdots \\
+   A=  & a_{i1} & \cdots & a_{ij} & \cdots & a_{in} \\
+     & \vdots & \cdots & \vdots & \cdots & \vdots\\
+     & a_{m1} & \cdots & a_{mj} & \cdots & a_{mn} \\ \hline
+    \end{array}
+  $$ 
+\end{frame}
+
+\begin{frame}{Exemplo}
+  Ache a matriz da transformação que ache o ponto simétrico em relação à reta $r: (0,0)+t(1,1)$
+\begin{center}
+  \begin{tikzpicture}
+    \draw[gray](-1.5,-1.5) grid (4.5,4.5);
+    \draw[thick, dashed] (-1.5,-1.5) -- (4.5,4.5);
+    \draw[-latex] (0,0) -- (2,0);
+    \draw[-latex] (0,0) -- (0,2);
+    \draw[-latex, blue] (0,0) -- (1,3);
+    \draw[-latex, red] (0,0) -- (3,1);
+    \draw[thin,dashed,blue, -latex] (1,3) -- (3,1);
+\end{tikzpicture}
+\end{center} 
+\end{frame}
+
+\begin{frame}
+  Note que $T(\mathbf{e}_1)=\mathbf{e}_2$ e $T(\mathbf{e}_2) \mathbf{e}_1$
+  Então
+  $$ A= \begin{pmatrix}
+    0 & 1 \\ 1 & 0
+  \end{pmatrix}$$
+\end{frame}
+
+
+\begin{frame}{Rotação no Plano}
+  Qual a matriz de uma Rotação em torno da origem em $\mathbb{R}^2$
+  \begin{tikzpicture}
+    \draw[gray](-1.5,-1.5) grid (4.5,4.5);
+    \draw[-latex] (0,0) -- (2,0);
+    \draw[-latex] (0,0) -- (0,2);
+    \draw[-latex,blue] (0,0) -- (30:4) node[anchor=west] {$\mathbf{x}$};
+    \draw[-latex,red] (0,0) -- (60:4) node[anchor=south] {$A\mathbf{x}$};
+    \draw[-latex, blue, dashed] (30:4) arc (30:60:4) node[xshift=0.5cm,yshift=-1.0cm] {$\theta$};
+  \end{tikzpicture}
+
+  Note que $T(\mathbf{e}_1)=\cos{\theta}\mathbf{e}_1 + \sin{\theta}\mathbf{e}_2$ e
+  $T(\mathbf{e}_2)=-\sin{\theta}\mathbf{e}_1 + \cos{\theta}\mathbf{e}_2$
+$$ A = \begin{pmatrix}
+  \cos{\theta} & -\sin{\theta} \\
+  \sin{\theta} & \cos{\theta}
+\end{pmatrix}
+$$
+\end{frame}
+
+
+\begin{frame}
+  {Projeção ortogonal no plano}
+Dada  uma reta que passa pela origem $r: (0,0) + s\mathbf{v}$, achar a 
+matriz da projeção ortogonal sobre esta reta
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[gray](-1.5,-1.5) grid (4.5,4.5);
+  \draw[-latex] (0,0) -- (2,0);
+  \draw[-latex] (0,0) -- (0,2);
+  \draw[dashed] (-1.5,-0.75)--(4,2) node[near end, anchor=south] {$r$};
+  \draw[gray] (1,2)--(2,0);
+\draw[-latex,blue] (0,0)--(1,2) node[anchor=south] {$\mathbf{x}$};
+\draw[-latex,red] (0,0) -- (1.6,0.8) node[anchor=west] {$A\mathbf{x}$};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  Agora precisamos lembrar como é a fórmula da projeção, que a gente já fez.
+  $$ \text{proj}_{r}(\mathbf{x}) = \frac{\mathbf{x}\cdot\mathbf{v}}{\|\mathbf{v}\|^2}\mathbf{v}$$
+
+  Se colocamos $\mathbf{v}=(v_1,v_2)$ então $\mathbf{e}_1 \cdot \mathbf{v} = v_1$ e  $\mathbf{e}_2 \cdot \mathbf{v} = v_2.$ 
+ 
+  Dessa forma
+    $$
+    \text{proj}_{r}(\mathbf{e}_1) =
+    \begin{bmatrix}
+  v_1^2/(v_1^2 + v_2^2) \\ v_1v_2 / (v_1^2 + v_2^2)
+\end{bmatrix} \text{ e }\text{proj}_{r}(\mathbf{e}_2) =
+\begin{bmatrix}
+v_1 v_2/(v_1^2 + v_2^2) \\ v_2^2 / (v_1^2 + v_2^2)
+\end{bmatrix} 
+$$
+
+$$ A = \frac{1}{(v_1^2+v_2^2)}\begin{pmatrix}
+  v_1^2 & v_1v_2 \\ v_1v_2 & v_2^2
+\end{pmatrix}
+$$
+\end{frame}
+
+\begin{frame}{Exemplos em dimensão 3}
+  
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{1}
+
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{2}
+  
+\end{block}
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{3}
+  
+\end{block}
+\end{frame}   
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{4}
+  
+\end{block}
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{5}
+
+\end{block}
+\end{frame}
+
+
+\end{document}

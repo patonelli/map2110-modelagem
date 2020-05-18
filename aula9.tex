@@ -192,7 +192,7 @@ $T_A(\mathbf{x}) + T_A(\mathbf{y}) = \begin{pmatrix}
 \end{frame}
 
 \begin{frame}
-  Note que $T(\mathbf{e}_1)=\mathbf{e}_2$ e $T(\mathbf{e}_2) \mathbf{e}_1$
+  Note que $T(\mathbf{e}_1)=\mathbf{e}_2$ e $T(\mathbf{e}_2) = \mathbf{e}_1$
   Então
   $$ A= \begin{pmatrix}
     0 & 1 \\ 1 & 0
@@ -263,37 +263,130 @@ $$
 \end{frame}
 
 \begin{frame}{Exemplos em dimensão 3}
-  
+  Qual a matriz que define a rotação de uma ângulo $\phi$ em torno do 
+  eixo $y$, digamos.
+\begin{center}
+  \begin{tikzpicture}
+    \draw[-latex, thick] (0,0,0) -- (2,0,0) node[anchor=south] {$y$};
+    \draw[-latex, thick] (0,0,0) -- (0,2,0) node[anchor=east] {$z$};
+    \draw[-latex, thick] (0,0,0) -- (0,0,2) node[anchor=west] {$x$};
+    \draw[gray!60] (2,0,0) -- (5,0,0);
+    \draw[fill=red] (3,0,0) circle [radius=2pt] node[anchor=east] {$\phi$};
+    \draw[green, dashed] (3,0,0) circle [x radius = 0.5cm, y radius= 2cm];
+
+    \draw[gray!60] (3,0) -- ++(240:1.0cm);
+    \draw[gray!60] (3,0) -- ++(100:1.7cm);
+
+    \draw[blue,-latex] (0,0,0)--(3.3,0,2.1);
+    \draw[red,-latex] (0,0,0)--(3.5,2.4,2.0);
+  \end{tikzpicture}
+\end{center}
+$$ A= \begin{pmatrix}
+  \cos(\phi) & 0 & -\sin(\phi)\\
+  0 & 1 & 0 \\
+  \sin(\phi) & 0 &\cos(\phi)
+\end{pmatrix}$$
+\end{frame}
+
+\begin{frame}
+  Projeção ortogonal sobre um plano gerado pelos vetores $\mathbf{u}$ e $\mathbf{v}$
+
+  \begin{tikzpicture}
+    %eixos
+    \draw[-latex, thick, gray] (0,0,0) -- (2,0,0) node[anchor=south] {$y$};
+    \draw[-latex, thick, gray] (0,0,0) -- (0,2,0) node[anchor=east] {$z$};
+    \draw[-latex, thick, gray] (0,0,0) -- (0,0,2) node[anchor=west] {$x$};
+    %plano
+    
+    \shadedraw[red!40, opacity=0.5 ] (0,0,0) -- (3,3,0)-- (7,3,3) -- (4.5,0,3) -- cycle;
+    \draw[-latex,green!60!black] (0,0,0) -- (2,2,0);
+    \draw[-latex,green!60!black] (0,0,0) -- (3,0,2);
+
+    \draw[-latex,blue] (0,0,0) -- (2,3,5);
+    \draw[-latex,red] (0,0,0) -- (4,1,2);
+    \draw[red,dashed] (2,3,5) -- (4,1,2);
+    \draw (0,0,0) -- (-2,2,3);
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Fazendo as contas}
+  Vamos chamar $\mathbf{u} = \begin{bmatrix}
+    u_1 \\ u_2 \\ u_3
+  \end{bmatrix}$ e $\mathbf{v} = \begin{bmatrix}
+    v_1 \\ v_2 \\ v_3
+  \end{bmatrix}$ queremos escrever $\text{proj}(\mathbf{x})
+=\alpha\mathbf{u} + \beta\mathbf{v} =\begin{bmatrix}
+  u_1 & v_1 \\ u_2 & v_2 \\ u_3 & v_2
+\end{bmatrix} \begin{bmatrix}
+  \alpha \\ \beta
+\end{bmatrix} $ Como $\mathbf{u}$ e $\mathbf{v}$ devem ser ortogonais
+a $\mathbf{x} - \text{proj}(\mathbf{x})$ ou seja $(\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v})\cdot\mathbf{u} =0$
+$(\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v})\cdot\mathbf{v} =0$
+  Na forma matricial:
+  \begin{gather*} \begin{bmatrix}
+    u_1 & u_2 & u_3 \\
+    v_1 & v_2 & v_3 
+  \end{bmatrix} \mathbf{x} = \begin{bmatrix}
+    \mathbf{u}\cdot\mathbf{u} & \mathbf{u}\cdot\mathbf{v} \\
+    \mathbf{v}\cdot\mathbf{u} & \mathbf{v}\cdot\mathbf{v}
+  \end{bmatrix}\begin{bmatrix}
+    \alpha \\ \beta
+  \end{bmatrix} \\
+\begin{bmatrix}
+  \alpha \\ \beta
+\end{bmatrix} = \begin{bmatrix}
+  \mathbf{u}\cdot\mathbf{u} & \mathbf{u}\cdot\mathbf{v} \\
+  \mathbf{v}\cdot\mathbf{u} & \mathbf{v}\cdot\mathbf{v}
+\end{bmatrix}^{-1} \begin{bmatrix}
+  u_1 & u_2 & u_3 \\
+  v_1 & v_2 & v_3 
+\end{bmatrix} \mathbf{x} 
+\end{gather*}
 \end{frame}
 
 \begin{frame}{Verdadeiro ou Falso}
   \begin{block}{1}
-
-
+Se $T: \mathbb{R}^n \to \mathbb{R}^m$ é uma aplicação linear, então $T(0)=0$
 \end{block}
 \end{frame}
 
 \begin{frame}{Verdadeiro ou Falso}
   \begin{block}{2}
-  
+  Se $F:\mathbb{R}^3 \ to \mathbb{R}$ é linear então só pode ser constante igual a zero.
 \end{block}
 \end{frame}
 
 \begin{frame}{Verdadeiro ou Falso}
   \begin{block}{3}
-  
+  Se a matriz $A$ tiver blocos quadrados
+  $$ A = \begin{bmatrix}
+    A_1 & \mathbf{O} \\
+    \mathbf{O} & A_2
+  \end{bmatrix}$$ e $A$ é invertível, então cada um dos blocos $A_i$ é invertível.
 \end{block}
 \end{frame}   
 
 \begin{frame}{Verdadeiro ou Falso}
   \begin{block}{4}
-  
+  se $\wedge$ denotar o produto vetorial então temos que
+  $$\begin{bmatrix}
+    x_1 \\ x_2 \\ x_3 
+  \end{bmatrix} \wedge \begin{bmatrix}
+    y_1 \\ y_2 \\ y_3
+  \end{bmatrix} = \begin{bmatrix}
+    0 & -x_3 & x_2 \\
+    x_3 & 0 & -x_1 \\
+    -x_2  & x_1 &0
+  \end{bmatrix}\begin{bmatrix}
+    y_1 \\ y_2 \\ y_3
+  \end{bmatrix}
+  $$
 \end{block}
 \end{frame}
 
 \begin{frame}{Verdadeiro ou Falso}
   \begin{block}{5}
-
+$A^TA\mathbf{x}=0 \iff A\mathbf{x}=0$
 \end{block}
 \end{frame}
 

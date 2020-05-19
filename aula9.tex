@@ -177,7 +177,7 @@ $T_A(\mathbf{x}) + T_A(\mathbf{y}) = \begin{pmatrix}
 \end{frame}
 
 \begin{frame}{Exemplo}
-  Ache a matriz da transformação que ache o ponto simétrico em relação à reta $r: (0,0)+t(1,1)$
+  Ache a matriz da transformação que dê o ponto simétrico em relação à reta $r: (0,0)+t(1,1)$
 \begin{center}
   \begin{tikzpicture}
     \draw[gray](-1.5,-1.5) grid (4.5,4.5);
@@ -310,18 +310,39 @@ $$ A= \begin{pmatrix}
 \end{frame}
 
 \begin{frame}{Fazendo as contas}
-  Vamos chamar $\mathbf{u} = \begin{bmatrix}
+  Vamos chamar 
+  $$
+  \mathbf{u} = \begin{bmatrix}
     u_1 \\ u_2 \\ u_3
-  \end{bmatrix}$ e $\mathbf{v} = \begin{bmatrix}
+  \end{bmatrix} \text{ e }\mathbf{v} = \begin{bmatrix}
     v_1 \\ v_2 \\ v_3
-  \end{bmatrix}$ queremos escrever $\text{proj}(\mathbf{x})
-=\alpha\mathbf{u} + \beta\mathbf{v} =\begin{bmatrix}
+  \end{bmatrix}$$
+  
+queremos encontrar  $\alpha$ e $\beta$ tais que
+ $$
+ \text{proj}(\mathbf{x})=\alpha\mathbf{u} + \beta\mathbf{v} =
+ \begin{bmatrix}
   u_1 & v_1 \\ u_2 & v_2 \\ u_3 & v_2
 \end{bmatrix} \begin{bmatrix}
   \alpha \\ \beta
-\end{bmatrix} $ Como $\mathbf{u}$ e $\mathbf{v}$ devem ser ortogonais
-a $\mathbf{x} - \text{proj}(\mathbf{x})$ ou seja $(\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v})\cdot\mathbf{u} =0$
-$(\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v})\cdot\mathbf{v} =0$
+\end{bmatrix}
+$$
+\end{frame}
+
+\begin{frame}{Condição de ortogonalidade}
+
+  O vetor $\mathbf{x} - \text{proj}(\mathbf{x})$ deve ser ortogonal ao 
+  plano, e assim ortogonal aos vetores $\mathbf{u}$ e $\mathbf{v}$ que nos 
+  fornece as equações
+\begin{gather*}
+  \mathbf{u}\cdot (\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v})=0 \\
+  \mathbf{v}\cdot (\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v}) =0
+\end{gather*}
+ou
+\begin{gather*}
+  \mathbf{u}\cdot \mathbf{x}=\alpha\mathbf{u}\cdot\mathbf{u} -\beta\mathbf{u}\cdot\mathbf{v}=0 \\
+  \mathbf{v}\cdot \mathbf{x}=\alpha\mathbf{v}\cdot\mathbf{u} -\beta\mathbf{v}\cdot\mathbf{v} =0
+\end{gather*}
   Na forma matricial:
   \begin{gather*} \begin{bmatrix}
     u_1 & u_2 & u_3 \\
@@ -331,7 +352,11 @@ $(\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v})\cdot\mathbf{v} =0$
     \mathbf{v}\cdot\mathbf{u} & \mathbf{v}\cdot\mathbf{v}
   \end{bmatrix}\begin{bmatrix}
     \alpha \\ \beta
-  \end{bmatrix} \\
+  \end{bmatrix} \end{gather*}
+\end{frame}
+\begin{frame}
+  Resolvendo a equação para $\alpha$ e $\beta$ temos
+  \begin{gather*}
 \begin{bmatrix}
   \alpha \\ \beta
 \end{bmatrix} = \begin{bmatrix}
@@ -340,7 +365,30 @@ $(\mathbf{x}-\alpha\mathbf{u} -\beta\mathbf{v})\cdot\mathbf{v} =0$
 \end{bmatrix}^{-1} \begin{bmatrix}
   u_1 & u_2 & u_3 \\
   v_1 & v_2 & v_3 
-\end{bmatrix} \mathbf{x} 
+\end{bmatrix} \mathbf{x}  \\
+\text{proj}(\mathbf{x})=
+ \begin{bmatrix}
+  u_1 & v_1 \\ u_2 & v_2 \\ u_3 & v_2
+\end{bmatrix} \begin{bmatrix}
+  \alpha \\ \beta
+\end{bmatrix} = \begin{bmatrix}
+  u_1 & v_1 \\ u_2 & v_2 \\ u_3 & v_2
+\end{bmatrix}\begin{bmatrix}
+  \mathbf{u}\cdot\mathbf{u} & \mathbf{u}\cdot\mathbf{v} \\
+  \mathbf{v}\cdot\mathbf{u} & \mathbf{v}\cdot\mathbf{v}
+\end{bmatrix}^{-1} \begin{bmatrix}
+  u_1 & u_2 & u_3 \\
+  v_1 & v_2 & v_3 
+\end{bmatrix} \mathbf{x} \\
+A= \begin{bmatrix}
+  u_1 & v_1 \\ u_2 & v_2 \\ u_3 & v_2
+\end{bmatrix}\begin{bmatrix}
+  \mathbf{u}\cdot\mathbf{u} & \mathbf{u}\cdot\mathbf{v} \\
+  \mathbf{v}\cdot\mathbf{u} & \mathbf{v}\cdot\mathbf{v}
+\end{bmatrix}^{-1} \begin{bmatrix}
+  u_1 & u_2 & u_3 \\
+  v_1 & v_2 & v_3 
+\end{bmatrix}
 \end{gather*}
 \end{frame}
 
@@ -352,7 +400,7 @@ Se $T: \mathbb{R}^n \to \mathbb{R}^m$ é uma aplicação linear, então $T(0)=0$
 
 \begin{frame}{Verdadeiro ou Falso}
   \begin{block}{2}
-  Se $F:\mathbb{R}^3 \ to \mathbb{R}$ é linear então só pode ser constante igual a zero.
+  Se $F:\mathbb{R}^3 \to \mathbb{R}$ é linear então só pode ser constante igual a zero.
 \end{block}
 \end{frame}
 

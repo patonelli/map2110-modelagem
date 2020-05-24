@@ -1,0 +1,379 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+\title[Determinantes]{Determinantes de Matrizes}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{26 de maio}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{A importância de uma matriz invertível}
+  $$ A\mathbf{x} = \mathbf{b} \implies x= A^{-1}\mathbf{b} $$
+
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[gray!50] (-0.5, -0.5) grid (3.5,3.5);
+      \draw[red!50] (4.5,-0.5) grid (8.5,3.5);
+      \draw[-latex, blue] (2,2.0) .. controls (3,3) and (5,3) .. node[anchor=south] {$A$} (6,2.0);
+      \draw[-latex, red] (6,1.0) .. controls (5,0) and (3,0) .. node[anchor=north] {$A^{-1}$} (2,1);
+      \coordinate (A) at (1.5,1.5);
+      \draw (A) node {$\mathbb{R}^n$}; 
+      \coordinate (B) at (6.5,1.5);
+      \draw (B) node {$\mathbb{R}^n$};
+      \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}{Caso $2\times 2$}
+\begin{gather*}
+  A = \begin{pmatrix}
+    a_{11} & a_{12} \\ 
+    a_{21} & a_{22}
+  \end{pmatrix} \text{ invertível } \iff \det{A} \neq 0 \\
+  \det(A) = a_{11}a_{22} - a_{21}a_{12} \\
+  \text{ de fato, se } \det(A)\neq 0 \implies A^{-1} = \frac{1}{\det(A)}\begin{pmatrix}
+    a_{22} & -a_{12} \\ -a_{21} & a_{11}
+  \end{pmatrix} 
+\end{gather*}
+\end{frame}
+
+\begin{frame}{}
+  Pra mostrar que se $A$ é invertível usamos a eliminação de Gauss, supondo $a_{11}\neq 0$:
+  $$
+  \begin{array}{|cc|c|}\hline
+    a_{11} & a_{12} & \\ 
+    a_{21} & a_{22} & \textcolor{red}{a_{11}L_2 - a_{21}L_1} \\ \hline  
+  \end{array}\rightarrow
+  \begin{array}{|cc|c|}\hline
+    a_{11} & a_{12} & \\ 
+    0 & \det(A) & \textcolor{red}{\leftarrow} \\ \hline  
+  \end{array}
+  $$
+ 
+\end{frame}
+
+\begin{frame}{Algumas propriedades do determinante (caso $2\times 2$)}
+  Estas propriedades queremos estender para a os determinantes de dimensões maiores:
+  \begin{enumerate}
+    \item $\det(I)=1$ 
+    \item Se uma coluna ou uma linha for zero então $det(A)=0$
+    \item Se $A$ e $B$ diferem só por troca de linhas ou de colunas, então $\det(A) = -\det(B)$
+    \item Se a primeira linha de $B$ é um $a$ vezes a primeira linha de $A$ e as segundas linhas são as mesmas, então 
+    $\det(B) = a\det(A)$
+    \item Se a diferença entre $A$ e $B$ é que a primeira linha de $B$ é a primeira linha de $A$ mais um multiplo da segunda linha de $A$ então $\det(A)=\det(B)$
+  \end{enumerate}
+\end{frame}
+\begin{frame}{Comentários}
+  
+\end{frame}
+
+\begin{frame}{Determinantes de matrizes $3\times 3$}
+  Antes de dar uma definição do caso geral, trataremos o caso 
+  $3\times 3$ para nos convencermos de que estamos no caminho certo.
+  Queremos definir um número para a matriz, que indidique que ela é invertível.
+  \begin{gather*}
+    \begin{array}{|ccc|l|}\hline
+      a_{11} & a_{12} & a_{13} & \\
+      a_{21} & a_{22} & a_{23} & \textcolor{red}{a_{11}L_2 - a_{21}L1}\\
+      a_{31} & a_{32} & a_{33} & \textcolor{red}{a_{11}L_3 - a_{31}L1}\\ \hline
+      \end{array} \rightarrow \\
+    \begin{array}{|ccc|l|}\hline
+        a_{11} & a_{12} & a_{13} & \\
+        0 & \textcolor{blue}{a_{11}a_{22}-a_{21}a_{12}} & \textcolor{blue}{a_{11}a_{23}-a_{21}a_{13}} & \\
+        0 & \textcolor{blue}{a_{11}a_{32} -a_{31}a{12}} & \textcolor{blue}{a_{11}a_{33}-a_{31}a_{13}} & \\ \hline
+    \end{array}
+  \end{gather*}
+  
+\end{frame}
+
+\begin{frame}
+  \begin{align*}
+    &\textcolor{blue}{(a_{11}a_{22}-a_{21}a_{12})}\textcolor{blue}{(a_{11}a_{33}-a_{31}a_{13})} \\
+  - &\textcolor{red}{(a_{11}a_{23}-a_{21}a_{13})}\textcolor{red}{(a_{11}a_{32} -a_{31}a_{12})}
+  \end{align*}
+  Distribuindo a multiplicação:
+  \begin{align*}
+    &\textcolor{blue}{a_{11}a_{22}a_{11}a_{33}- a_{11}a_{22}a_{31}a_{13} -a_{21}a_{12}a_{11}a_{33}+ \fbox{$a_{21}a_{12}a_{31}a_{13}$}} \\
+  - &(\textcolor{red}{a_{11}a_{23}a_{11}a_{32} -a_{21}a_{13} a_{11}a_{32} -a_{11}a_{23}a_{31}a_{12} +\fbox{$a_{21}a_{13}a_{31}a_{12}$}}) \\
+  = & a_{11}(\textcolor{blue}{ a_{22}a_{11}a_{33} - 
+  a_{22}a_{31}a_{13} -a_{21}a_{12}a_{33}}\textcolor{red}{-
+  a_{23}a_{11}a_{32}+a_{21}a_{13}a_{32}+ \cdots }\\
+  & \textcolor{red}{+ a_{23}a_{31}a_{12}}) \\
+  = &
+  a_{11}\left( a_{11}
+   \begin{vmatrix}
+    a_{22} & a_{23} \\
+    a_{32} & a_{33}
+  \end{vmatrix} -
+   a_{21}
+   \begin{vmatrix}
+    a_{12} & a_{13} \\
+    a_{32} & a_{33}
+  \end{vmatrix} + a_{31}
+  \begin{vmatrix}
+    a_{12} & a_{13}\\
+    a_{22} & a_{23}
+  \end{vmatrix} \right) 
+  \end{align*}
+\end{frame}
+
+\begin{frame}
+  Para matrizes de dimensão $3\times 3$ podemos definir então:
+
+  $$ \det(A) = \left( a_{11}
+  \begin{vmatrix}
+   a_{22} & a_{23} \\
+   a_{32} & a_{33}
+ \end{vmatrix} -
+  a_{21}
+  \begin{vmatrix}
+   a_{12} & a_{13} \\
+   a_{32} & a_{33}
+ \end{vmatrix} + a_{31}
+ \begin{vmatrix}
+   a_{12} & a_{13}\\
+   a_{22} & a_{23}
+ \end{vmatrix} \right)$$
+ Se $A =\begin{pmatrix}
+   1 & 0 & 2 \\ 2 & 1 & -1 \\ 0 & -2 & 4 
+ \end{pmatrix}$ então
+ $$ \det(A)=\left( 1
+   \begin{vmatrix}
+    1 & -1 \\
+    -2 & 4
+  \end{vmatrix} -
+   2
+   \begin{vmatrix}
+    0 & 2 \\
+    -2 & 4
+  \end{vmatrix} + 0
+  \begin{vmatrix}
+    0 & 2\\
+    1 & -1
+  \end{vmatrix} \right)=-6$$
+
+\end{frame}
+
+\begin{frame}{exemplos}
+  Se $A =\begin{pmatrix}
+    1 & 1 & 2 \\ 2 & 1 & -1 \\ 1& 1 & 2
+  \end{pmatrix}$ 
+  $$ \det(A)= \left( 1
+  \begin{vmatrix}
+   1 & -1 \\
+   1 &  2
+ \end{vmatrix} -
+  2
+  \begin{vmatrix}
+   1 & 2 \\
+   1 & 2
+ \end{vmatrix} + 1
+ \begin{vmatrix}
+   1 & 2\\
+   1 & -1
+ \end{vmatrix} \right)=0$$
+
+ Se $A =\begin{pmatrix}
+0 & -2 & 4 \\ 2 & 1 & -1  \\1 & 0 & 2
+\end{pmatrix}$ então
+$$ \det(A)=\left( 0
+  \begin{vmatrix}
+   1 & -1 \\
+   0& 2
+ \end{vmatrix} -
+  2
+  \begin{vmatrix}
+   -2 & 4 \\ 0 & 2 
+ \end{vmatrix} + 1
+ \begin{vmatrix}
+   -2 & 4\\
+   1 & -1
+ \end{vmatrix} \right)=6$$
+\end{frame}
+
+\begin{frame}{A definição geral}
+  Se $A$ é uma matriz quadrada de dimensão $n$, então, por 
+  definição, $A_{ij}$ é a matriz quadrada de dimensão $n-1$
+  obtida de $A$ eliminando-se a $i$-ésima linha e a
+  $j$-ésima coluna.
+
+  Se tivermos definido o determinante de matrizes 
+  de dimensão $n-1$ vamos definir o cofator da posição
+  $ij$ da matriz $A$ como o número
+  $$ c_{ij}(A)=(-1)^{i+j}\det(A_{ij}) $$
+  Iremos definir
+  $$ \det{A} = \sum_{i=1}^n a_{i1}c_{i1}(A)$$
+  
+\end{frame}
+
+\begin{frame}{Exemplos}
+  Vamos ver a matriz $ A =\begin{pmatrix} 0 & -2 & 4 \\ 2 & 1 & -1  \\1 & 0 & 2 \end{pmatrix} $ .
+
+\begin{gather*}
+A_{11} = \begin{bmatrix}
+  1 & -1 \\ 0 & 2
+\end{bmatrix}\text{ }A_{12}=\begin{bmatrix}
+  2 & -1 \\ 1 & 2
+\end{bmatrix}\text{ }A_{13}=\begin{bmatrix}
+  2 & 1 \\ 1 & 0
+\end{bmatrix} \\
+A_{21} = \begin{bmatrix}
+  -2 & 4 \\ 0 & 2
+\end{bmatrix}\text{ }A_{22}=\begin{bmatrix}
+  0 & 4 \\ 1 & 2
+\end{bmatrix}\text{ }A_{23}=\begin{bmatrix}
+  0 & -2 \\ 1 & 0
+\end{bmatrix} \\
+A_{31} = \begin{bmatrix}
+  -2 & 4 \\ 1 & -1
+\end{bmatrix}\text{ }A_{32}=\begin{bmatrix}
+  0 & 4 \\ 2 & {1}
+\end{bmatrix}\text{ }A_{33}=\begin{bmatrix}
+  0 & -2 \\ 2 & 1
+\end{bmatrix}
+\end{gather*}
+\end{frame}
+
+\begin{frame}{Exemplos}
+Vamos ver a matriz $ A =\begin{pmatrix} 0 & -2 & 4 \\ 2 & 1 & -1  \\1 & 0 & 2 \end{pmatrix} $ .
+
+\begin{gather*}
+A_{11} = \begin{bmatrix}
+1 & -1 \\ 0 & 2
+\end{bmatrix}\text{ }A_{12}=\begin{bmatrix}
+2 & -1 \\ 1 & 2
+\end{bmatrix}\text{ }A_{13}=\begin{bmatrix}
+2 & 1 \\ 1 & 0
+\end{bmatrix} \\
+A_{21} = \begin{bmatrix}
+-2 & 4 \\ 0 & 2
+\end{bmatrix}\text{ }A_{22}=\begin{bmatrix}
+0 & 4 \\ 1 & 2
+\end{bmatrix}\text{ }A_{23}=\begin{bmatrix}
+0 & -2 \\ 1 & 0
+\end{bmatrix} \\
+A_{31} = \begin{bmatrix}
+-2 & 4 \\ 1 & -1
+\end{bmatrix}\text{ }A_{32}=\begin{bmatrix}
+0 & 4 \\ 2 & \textcolor{blue}{-1}
+\end{bmatrix}\text{ }A_{33}=\begin{bmatrix}
+0 & -2 \\ 2 & 1
+\end{bmatrix}
+\end{gather*}
+\end{frame}
+
+\begin{frame}{Matriz de cofatores}
+\begin{gather*}
+  C=
+\begin{bmatrix}
+  \textcolor{blue}{ +
+\begin{vmatrix}
+1 & -1 \\ 0 & 2
+\end{vmatrix}}&
+\textcolor{red}{-\begin{vmatrix}
+2 & -1 \\ 1 & 2
+\end{vmatrix}}&
+\textcolor{blue}{+\begin{vmatrix}
+2 & 1 \\ 1 & 0
+\end{vmatrix}} \\
+\textcolor{red}{-\begin{vmatrix}
+-2 & 4 \\ 0 & 2
+\end{vmatrix}} & 
+\textcolor{blue}{+\begin{vmatrix}
+0 & 4 \\ 1 & 2
+\end{vmatrix}} &
+\textcolor{red}{-\begin{vmatrix}
+0 & -2 \\ 1 & 0
+\end{vmatrix}} \\
+\textcolor{blue}{+\begin{vmatrix}
+-2 & 4 \\ 1 & -1
+\end{vmatrix}}&
+\textcolor{red}{-\begin{vmatrix}
+0 & 4 \\ 2 & {-1}
+\end{vmatrix}}&
+\textcolor{blue}{+\begin{vmatrix}
+0 & -2 \\ 2 & 1
+\end{vmatrix}}
+\end{bmatrix}= \begin{bmatrix}
+  2 & -5 & -1 \\ 4 & -4 & -2 \\ -2 & 8 & -4
+\end{bmatrix}
+\end{gather*}
+\end{frame}
+
+\begin{frame}
+  $$
+ \begin{bmatrix}
+   0 & 2 & 1 \\ -2 & 1 & 0 \\ 4 & -1 & 2
+ \end{bmatrix} 
+  \begin{bmatrix}
+    2 & -5 & -1 \\ 4 & -4 & -2 \\ -2 & 8 & -4
+  \end{bmatrix}= \begin{bmatrix}
+    6 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 6
+  \end{bmatrix}
+  $$
+\end{frame}
+
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{1}
+$\begin{pmatrix}
+  \cos(\theta) & -\sin(\theta) \\
+  \sin(\theta) & \cos{\theta}
+\end{pmatrix}$ é invertível para todo $\theta \in \mathbb{R}.$
+\end{block}
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{2}
+Se $T : \mathbb{R}^3 \to \mathbb{R}^3$ é linear e injetora,
+e se $A$ é sua matriz associada, então $Ax=b$ têm, no máximo,
+uma única solução.
+\end{block}
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{3}
+  Uma aplicação linear $T:\mathbb{R}^3 \to \mathbb{R}^2$ não pode ser sobrejetora.
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{4}
+  A aplicação $T(x,y) = (x -2y, \sqrt{2}x)$ é linear
+  \end{block}
+\end{frame}
+
+\begin{frame}{Verdadeiro ou Falso}
+  \begin{block}{5}
+  A aplicação $T(x,y) = (2xy, 3x+y)$ é linear
+  \end{block}
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,288 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+\title[Determinantes]{Propriedades dos determinantes}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{2 de junho}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{A definição do determinante}
+  Se $A=[a_{ij}]$ é uma matriz quadrada $n\times n$ a definição de determinante dada foi:
+  $$ \det(A) = \sum_{i=1}^n a_{i1}c_{i1}$$
+  onde $c_{ij} = (-1)^{i+j}\det(A_{ij})$ e $A_{ij}$ é a matriz reduzida de dimensão $(n-1)\times(n-1)$ obtida 
+  eliminando-se a $i$-ésima linha e a $j$-ésima coluna de $A$.
+
+  Vamos usar também a notação seguinte:
+  $$ a_{i*} = \begin{bmatrix}
+    a_{i1} & \cdots & a_{in}
+  \end{bmatrix} \text{ para a linha }i$$
+  $$ a_{*j}=\begin{bmatrix}
+    a_{1j} \\ \vdots \\ a_{nj}
+  \end{bmatrix} \text{ para a coluna } j $$
+\end{frame}
+
+\begin{frame}{}
+  Seria bom ter a imagem do que acontece em dimensão 3
+  para entender algumas provas:
+  $$ \det(A) = \left( a_{11}
+  \begin{vmatrix}
+   a_{22} & a_{23} \\
+   a_{32} & a_{33}
+ \end{vmatrix} -
+  a_{21}
+  \begin{vmatrix}
+   a_{12} & a_{13} \\
+   a_{32} & a_{33}
+ \end{vmatrix} + a_{31}
+ \begin{vmatrix}
+   a_{12} & a_{13}\\
+   a_{22} & a_{23}
+ \end{vmatrix} \right)$$
+ onde 
+ $$ A = \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33} 
+   \end{bmatrix}$$
+\end{frame}
+
+\begin{frame}{1 determinante da matriz identidade}
+  Vamos fazer um monte de provas usando indução na dimensão da matriz.
+  Primeiro notamos que para o caso de matrizes $2\times 2$ isso foi feito na vez passada.
+  Assumimos que a tese valha até o caso de matrizes $(n-1)\times (n-1)$ (\textit{hipótese de indução}).
+  Se $I_n =[\delta_{ij}]$ é a matriz identidade $n\times n$ temos pela definição de determinante que
+  $$ \det(I) = \sum_{i=1}^n \delta_{i1} (-1)^{i+1}\det((I_n)_{i1}) = \delta_{11}\det{I_{n-1}} = 1$$
+ pois 
+ \begin{itemize}
+   \item $\delta_{11}=1$
+   \item $\det(I_{n-1})=1$ usando a hipótese de indução.
+ \end{itemize}
+ 
+\end{frame}
+
+\begin{frame}{2 troca de linhas}
+  Suponha que duas matrizes $A=[a_{ij}]$ e $B=[b_{ij}]$ só têm os elementos de uma linha $p$ e $p+1$ trocados, isto
+  é:
+  $$ a_{p*}=b_{(p+1)*} \text { e } a_{(p+1)*} = b_{p*}$$
+  então $\det(A)=-\det(B)$
+  Novamente usaremos indução para a dimensão das matrizes,
+  o caso $2 \times 2$ é simples. A hipótese de indução é que a tese 
+  valha para matrizes $(n-1)\times (n-1)$, e vamos mostrar que 
+  então temos para o caso $n\times n$.
+\end{frame}
+\begin{frame}{}
+  Observamos que
+  \begin{itemize}
+    \item Se $i\neq p, p+1$ então $A_{i1}$ e $B_{i1}$ continuam tendo as linhas $p$ e $p+1$ trocadas, e pela hipótese de indução $\det(A_{i1)=-det(B_{i1})})$
+    \item Se $ i=p,p+1 $ então $A_{p1}=B_{(p+1)1}$ e $B_{p1} = A_{(p+1)1}$
+  \end{itemize}
+  Então 
+  \begin{gather*}\det(A) = \sum_{i=1}^{p-1}a_{i1}(-1)^{i+1}\det{A_{i1}} + \cdots \\
+    +a_{p1}(-1)^{p+1}\det{A_{p1}} + a_{(p+1)1}(-1)^{p+2}\det{A_{(p+1)1}} + \cdots \\
+  + \sum_{i=p+2}^{n}a_{i1}(-1)^{i+1}\det{A_{i1}}\end{gather*}
+\end{frame}
+ 
+\begin{frame}
+  \begin{gather*}\det(A) = -\sum_{i=1}^{p-1}\textcolor{blue}{b_{i1}}(-1)^{i+1}\textcolor{blue}{\det{B_{i1}}} + \cdots \\
+    +b_{(p+1)1}(-1)^{p+1}\det{B_{(p+1)1}} + b_{p1}(-1)^{p+2}\det{B_{(p)1}} + \cdots \\
+  -\sum_{i=p+2}^{n}\textcolor{blue}{b_{i1}(-1)^{i+1}\det{B_{i1}}}=-\det(B) \qed \end{gather*}
+\end{frame}
+
+\begin{frame}{Exemplo}
+  \begin{gather*}
+    A =\begin{pmatrix}
+      1 & 0 & 2 \\ 2 & 1 & -1 \\ 0 & -2 & 4 
+    \end{pmatrix}\text{ e } B=\begin{pmatrix}
+      2 & 1 & -1 \\ 
+      1 & 0 & 2 \\ 
+      0 & -2 & 4 
+    \end{pmatrix}
+  \end{gather*}
+  
+\end{frame}
+
+\begin{frame}{E se trocarmos duas linhas quaisquer?}
+  Se trocamos a linha $p$ com a linha $p+r$ note que podemos primeiro colocar
+  a linha $p$ na posição da linha $p+r$ fazendo $r$
+  trocas simples e para posicionar a linha que estava em 
+  $p+r$ ( e agora está em $p+r-1$) na linha $p$ usamos 
+  mais $r-1$ trocas simples. Fizemos no total $2r-1$ trocas 
+  simples, em cada troca alteramos o sinal do determinante,
+  portanto temos o mesmo resultado: qualquer troca de linhas muda o sinal do 
+  determinante.
+\end{frame}
+
+\begin{frame}{3 Duas linhas iguais}
+
+  Se uma matriz $A$ tem duas linhas iguais então seu 
+  determinante é igual a zero.
+  Pois se trocamos as duas linhas iguais a matriz fica
+  inalterada e usando a propriedade anterior temos
+  $$ \det{A}=-\det{A} \implies \det{A}=0 $$
+\end{frame}
+
+\begin{frame}{4 uma linha de zeros}
+  Se $A$ é uma matriz $n\times n$ com uma linha inteira 
+  com zeros entâo $\det{A} =0$.
+
+  Repetimos o mesmo tipo de prova por indução em $n$ . O caso base é o $n=2$,
+  isto é, para matrizes $2\times 2$ o cálculo é fácil. E vamos tentar reduzir o
+  caso geral $n$ para o caso $n-1$.
+  
+  Suponha que na linha $p$ temos $a_{p*} = [0, \cdots, 0]$. Então $A_{i1}$ para todo $i\neq p$ tem uma linha
+  de zeros correspondente à linha $p$ de $A$. Pela hipótese de indução seu determinante é $0$. Então 
+  $$\det(A) = a_{p1}(-1)^{p+1}.\det(A_{p1})$$
+  mas por hipótese $a_{p1}$ também é $0$, mostrando que $\det(A)=0 \qed$
+\end{frame}
+
+\begin{frame}{5 Mudança por uma matriz elementar}
+
+  Suponha, primeiro lugar, que uma matriz $A$ tenha uma linha multiplicada por $r$. Então $B$ é uma matriz 
+  igual a $A$ a menos da linha $p$ onde $b_{p*}=ra_{p*}$. Então $\det{B} =r\det(A)$
+  Para o caso $n=2$
+  $$ \begin{vmatrix}
+    a_{11} & a_{12} \\
+    ra_{21}& ra_{22}
+  \end{vmatrix}= r(a_{11}a_{22}) - r(a_{21}a_{12}) =r \begin{vmatrix}
+    a_{11} & a_{12} \\
+    a_{21}& a_{22}
+  \end{vmatrix} $$
+
+  Para o caso geral:
+  \begin{itemize}
+    \item se $i\neq p$ então $\det(B_{i1}) =r\det(A_{i1})$ pela hipótese de indução, e $a_{i1}=b_{i1}$.
+    \item se $i=p$ então $A_{p1} = B_{p1}$ e $b_{p1} = ra_{p1}$
+  \end{itemize}
+
+  Usando a definição do determinante a prova está feita.
+  
+\end{frame}
+
+\begin{frame}
+  Suponha que $A$, $B$ e $C$ sejam matrizes quadradas que têm todos os elementos fora da linha $q$ iguais e
+  que na linha $q$ temos $b_{q*} = a_{q*} + c_{q*}$. Vamos mostrar que $\det(B) = \det(A) + \det(C)$
+
+Caso $n=2$ temos
+
+\begin{gather*}
+  A = \begin{bmatrix}a_{11} & a_{12} \\
+  a_{21}& a_{22}\end{bmatrix} \text{ } C= \begin{bmatrix}a_{11} & a_{12} \\
+  c_{21}& c_{22}\end{bmatrix} \text{ e }B= \begin{bmatrix}a_{11} & a_{12} \\
+  a_{21}+ c_{21}& a_{22}+c_{22}\end{bmatrix}
+\end{gather*}
+e a verificação é simples
+\end{frame}
+
+\begin{frame}
+  Agora usando indução temos:
+  \begin{itemize}
+    \item se $i\neq q$ temos $a_{i1}=b_{i1} =c_{i1}$ e $B_{i1}, A_{i1}, C_{i1}$ continuam com a mesma propriedade e pela hipótese de indução $\det(B_{i1})=\det(A_{i1})+ \det(C_{i1})$
+    \item se $i = q$ vale $b_{q1} = a_{q1} + c_{q1}$ e $B_{q1}=A_{q1}=C_{q1}$
+  \end{itemize}
+  \begin{gather*}
+    \det(B) =\sum_{i\neq q} (-1)^{i+1}b_{i1}\det(B_{i1}) + (-1)^{q+1}b_{q1}\det(B_{q1}) = \\
+=\sum_{i\neq q} (-1)^{i+1}b_{i1}(\det(A_{i1})+\det(C_{i1})) + (-1)^{q+1}(a_{q1}+ c_{q1})\det(B_{q1}) = \\
+\det(A) + \det(B) \qed
+  \end{gather*}
+\end{frame}
+
+\begin{frame}
+  Agora a diferença entre $A$ e $B$ é somente na linha $p$ onde
+  vale 
+  $$b_{p*} = a_{p*} + ra_{k*} \text{ com } k\neq p$$
+  Então $\det(A) = \det(B)$
+  
+  Podemos usar o caso acima tomando como $C$ a matriz igual a $A$ só que na linha $q$ tem $ra_{k*}$
+e como $C$ tem duas vezes a linha $a_{k*}$ seu determinante é zero
+  
+\end{frame}
+
+\begin{frame}{Matrizes elementares}
+  Vamos ver qual é o determinante dos três tipos de matrizes 
+  elementares
+  \begin{enumerate}
+    \item Troca de linhas.
+    \item multiplicar uma linha por $\alpha$
+    \item somar a uma linha o múltiplo de outra
+  \end{enumerate}
+\end{frame}
+\begin{frame}{1- Troca de linhas}
+    Se $E_1$ é a matriz identidade com as trocas de linhas
+    efetuadas em $I_n$, então 
+    $$ \det(E_1) = -1\det(I_n) = -1 $$
+    E como para toda matriz $A$, $E_1.A$ executa esta 
+    operação elementar na matriz $A$ então temos
+    $$ \det(E_1.A)=-\det(A)=\det(E_1)\det(A)$$
+    Executando duas trocas de linhas $E_1$ e $E_2$
+    teremos
+    $$\det(E_2.E_1)=\det(E_2).\det(E_1) =1$$
+  \end{frame}
+  
+  \begin{frame}{2- multiplicar uma linha por $\alpha$}
+
+    Neste caso a matriz elementar $E_{\alpha}$ é obtida multiplicando uma linha de $I_n$ por
+    $\alpha$, então
+    $$\det(E_{\alpha})= \alpha\det(I_n)=\alpha $$
+    da mesma forma que antes temos
+    $$\det(E_\alpha.A)=r\det(A)=\det(E_\alpha)\det(A)$$
+    e
+    $$ \det(E_{\alpha_1}.E_{\alpha_2}\cdots E_{\alpha_k}A)=\alpha_1.\det(E_{\alpha_2}\cdots E_{\alpha_k}A)=\cdots = \left(\prod_{i=1}^k \alpha_i \right)\det(A)$$
+    
+  \end{frame}
+
+  \begin{frame}{3- $L_q=L_q+ \alpha L_p$}
+    Se $E_{q,p}$ é a matriz elementar que realiza esta transformação então
+    $$ \det(E_{q,p})=\det(I_n)=1 $$
+    de novo
+    $$ \det(E_{q,p}A) \det(E_{q,p})\det(A)=\det(A)$$
+
+  \end{frame}
+  \begin{frame}{Sobre as transpostas}
+    As matrizes elementares do tipo 1 e 2 não se alteram quando transpostas. Há uma simetria em relação à
+    diagonal principal. Só precisamos ver o que acontece com as matrizes elementares do tipo $E_{q,p}$.
+    Neste caso se denotamos $E_{q,p}=[e_{ij}]$ temos que $e_{qp}=\alpha$ e $e_{ii}=1$ os outros elementos são nulos.
+    Então na matriz transposta $E_{q,p}^T=[h_{ij}]$ temos que 
+    \begin{itemize}
+      \item $h_{ii}=1$, pois os elementos da diagonal ficam iguais.
+      \item $h_{pq}=e_{qp}=\alpha$
+      \item os outros elementos são $0$
+    \end{itemize}
+    Mas esta é a matriz elementar que troca a linha $p$ com $L_p=L_p+\alpha L_q$ que é do terceiro tipo também.
+  \end{frame}
+
+  \begin{frame}{Teorema sobre as transpostas}
+    \begin{block}{Teorema}
+      Se $A$ é uma matriz quadrada, então $\det(A^T) = \det(A)$ 
+    \end{block}
+    \begin{itemize}
+      \item Se $A$ não é inversível então $\det(A)=0$ e $A^T$ também não é inversível, ou seja $\det(A^T)=0$
+      \item Se $A$ é elementar o teorema decorre da observação do último slide.
+      \item Se $A$ é inversível então $A=E_1.E_2\cdots E_k$ é produto de matrizes elementares. Então $A^T = E_k^T\cdots E_1^T$. Usando agora a primeira parte segue o resultado.
+    \end{itemize}
+    \end{frame}
+\end{document}

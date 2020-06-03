@@ -98,13 +98,17 @@
 \begin{frame}{}
   Observamos que
   \begin{itemize}
-    \item Se $i\neq p, p+1$ então $A_{i1}$ e $B_{i1}$ continuam tendo as linhas $p$ e $p+1$ trocadas, e pela hipótese de indução $\det(A_{i1)=-det(B_{i1})})$
+    \item Se $i\neq p, p+1$ então $A_{i1}$ e $B_{i1}$ continuam tendo as linhas $p$ e $p+1$ trocadas, e pela hipótese de indução $\det(A_{i1})=-det(B_{i1})$
     \item Se $ i=p,p+1 $ então $A_{p1}=B_{(p+1)1}$ e $B_{p1} = A_{(p+1)1}$
   \end{itemize}
   Então 
   \begin{gather*}\det(A) = \sum_{i=1}^{p-1}a_{i1}(-1)^{i+1}\det{A_{i1}} + \cdots \\
     +a_{p1}(-1)^{p+1}\det{A_{p1}} + a_{(p+1)1}(-1)^{p+2}\det{A_{(p+1)1}} + \cdots \\
   + \sum_{i=p+2}^{n}a_{i1}(-1)^{i+1}\det{A_{i1}}\end{gather*}
+\end{frame}
+
+\begin{frame}{Anotações 1}
+  
 \end{frame}
  
 \begin{frame}
@@ -137,6 +141,10 @@
   determinante.
 \end{frame}
 
+\begin{frame}{Anotações 2}
+  
+\end{frame}
+
 \begin{frame}{3 Duas linhas iguais}
 
   Se uma matriz $A$ tem duas linhas iguais então seu 
@@ -148,7 +156,7 @@
 
 \begin{frame}{4 uma linha de zeros}
   Se $A$ é uma matriz $n\times n$ com uma linha inteira 
-  com zeros entâo $\det{A} =0$.
+  com zeros então $\det{A} =0$.
 
   Repetimos o mesmo tipo de prova por indução em $n$ . O caso base é o $n=2$,
   isto é, para matrizes $2\times 2$ o cálculo é fácil. E vamos tentar reduzir o
@@ -180,6 +188,10 @@
   \end{itemize}
 
   Usando a definição do determinante a prova está feita.
+  
+\end{frame}
+
+\begin{frame}{Anotações 3}
   
 \end{frame}
 
@@ -259,7 +271,7 @@ e como $C$ tem duas vezes a linha $a_{k*}$ seu determinante é zero
     Se $E_{q,p}$ é a matriz elementar que realiza esta transformação então
     $$ \det(E_{q,p})=\det(I_n)=1 $$
     de novo
-    $$ \det(E_{q,p}A) \det(E_{q,p})\det(A)=\det(A)$$
+    $$ \det(E_{q,p}A)= \det(E_{q,p})\det(A)=\det(A)$$
 
   \end{frame}
   \begin{frame}{Sobre as transpostas}
@@ -280,9 +292,9 @@ e como $C$ tem duas vezes a linha $a_{k*}$ seu determinante é zero
       Se $A$ é uma matriz quadrada, então $\det(A^T) = \det(A)$ 
     \end{block}
     \begin{itemize}
-      \item Se $A$ não é inversível então $\det(A)=0$ e $A^T$ também não é inversível, ou seja $\det(A^T)=0$
+      \item Se $A$ não é invertível então $\det(A)=0$ e $A^T$ também não é invertível, ou seja $\det(A^T)=0$
       \item Se $A$ é elementar o teorema decorre da observação do último slide.
-      \item Se $A$ é inversível então $A=E_1.E_2\cdots E_k$ é produto de matrizes elementares. Então $A^T = E_k^T\cdots E_1^T$. Usando agora a primeira parte segue o resultado.
+      \item Se $A$ é invertível então $A=E_1.E_2\cdots E_k$ é produto de matrizes elementares. Então $A^T = E_k^T\cdots E_1^T$. Usando agora a primeira parte segue o resultado.
     \end{itemize}
     \end{frame}
 \end{document}

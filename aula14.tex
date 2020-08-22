@@ -1,0 +1,121 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+\title[diagonalização]{Exercícios}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{23 de junho}
+
+\begin{document}
+
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Sumário}
+  Se $A$ é uma matriz quadrada $n \times n$
+  \begin{itemize}
+    \item $p(\lambda) = \det(\lambda I - A)$ é um polinômio de grau $n$
+    \item Suas raízes serão chamadas autovalores de $A$
+    \item Um vetor não nulo $\mathbf{v}$ que satisfaz $A\mathbf{v}-\lambda\mathbf{v}=0$ é chamado de autovetor associado a $\lambda$.
+    \item Se encontramos $n$ autovetores linearmente independentes $\mathbf{v}_1\dots \mathbf{v}_n$, então a matriz $P=[\mathbf{v_1}\cdots\mathbf{v}_n]$ é invertível e $P^{-1}AP$ é diagonal.
+    \item No caso acima dizemos que $A$ é diagonalizável.
+  \end{itemize}
+  
+\end{frame}
+\begin{frame}{1}
+  $$A = \begin{bmatrix}
+    -6 & 5 \\ 0 & 4
+  \end{bmatrix}$$
+  \begin{enumerate}
+    \item Achar o polinômio característico e os auto valores.
+    \item Achar os autovetores e a matriz $P$ inversível tal que $P^{-1}AP$ seja diagonal.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{2}
+  Se $p(\lambda)$ é o polinômio característico de uma matriz $A$, e se $P$ é uma matriz invertível, então 
+  $P^{-1}AP$ tem o mesmo polinômio característico $p(\lambda)$
+\end{frame}
+
+\begin{frame}{3}
+  A sequência de Fibonacci é assim:
+  \begin{gather}
+    F_0=0 \text{ e } F_1 = 1 \\
+    F_{k+1} = F_k + F_{k-1}
+  \end{gather}
+  Mostre que vale :
+  \begin{gather*}
+    \begin{bmatrix}
+      F_{k+1} & F_{k} \\
+      F_k & F_{k-1}
+    \end{bmatrix} = \begin{bmatrix}
+      1 & 1 \\
+      1 & 0
+    \end{bmatrix}^k \\
+    \text{E a fórmula de Cassini: }\\
+    F_{n+1}F_{n-1} - {F_n}^2 =(-1)^n
+  \end{gather*}
+  
+\end{frame}
+
+\begin{frame}{4}
+  Dê exemplo de uma matriz que tenha os seguintes polinômios característicos:
+  \begin{enumerate}
+    \item $p(\lambda) = \lambda^2 + \lambda -2$
+    \item $p(\lambda) = \lambda^2 + 1$
+    \item $p(\lambda) = \lambda^2 + b\lambda + c$
+    \item $p(\lambda) = 2\lambda^2 -2\lambda -2$
+  \end{enumerate}
+  
+\end{frame}
+
+\begin{frame}{5}
+  \begin{gather*}
+    A= \begin{bmatrix}
+      1 & 0 \\ 0 & 1
+    \end{bmatrix} \text{ e } B= \begin{bmatrix}
+      1 & 1 \\ 0 & 1 
+    \end{bmatrix}
+  \end{gather*}
+  têm o mesmo polinômio característico ( e portanto os mesmos autovalores), mas não tem os mesmos autovetores!
+\end{frame}
+
+\begin{frame}{6}
+  \begin{gather*}
+    \mathbf{v}_1 = \begin{bmatrix}
+      -1 \\ 2
+    \end{bmatrix}\text{ }\mathbf{v}_2 = \begin{bmatrix}
+      1 \\ 1
+    \end{bmatrix} \text{ e } \mathbf{u}=\begin{bmatrix}
+      1 \\ 2
+    \end{bmatrix}
+  \end{gather*}
+  Se $\mathbf{v}_1$ é um autovetor associado ao autovalor $\lambda_1=1$ de uma matriz $A$ e $\mathbf{v}_2$ é outro
+  autovetor de $A$, será que podemos achar a matriz original $A$ sabendo que 
+  $$ A\mathbf{u}=\begin{bmatrix} \frac{11}{3}\\
+    \frac{14}{3}
+    \end{bmatrix} ?$$
+\end{frame}
+\end{document}

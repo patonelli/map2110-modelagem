@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{siunitx}
+
+\parindent=0pt
+
+ \addtolength{\textheight}{3.5cm}
+ \addtolength{\oddsidemargin}{-1cm}
+ \addtolength{\evensidemargin}{-1cm}
+ \addtolength{\textwidth}{2cm}
+ \addtolength{\topmargin}{-2.0cm}
+\newcounter{questao}
+\newcommand{\quest}{\stepcounter{questao}{\bf \arabic{questao}.\ }}
+
+\begin{document}
+\hrule
+ {  \sf  Lista 7 - Revisão II  \hfill \fbox{L7-2020}}
+\hrule
+
+\vspace{0.5cm}
+
+\thispagestyle{empty}
+\fontsize{14}{16}\selectfont
+
+\quest Escreva a equação paramétrica de uma reta em $\mathbb{R}^3$ que passa pelos pontos $A$ e $B$  onde
+$$ A=\begin{bmatrix}
+   1 \\ 1 \\ 0
+\end{bmatrix}\text{ e }B=\begin{bmatrix}
+   2 \\ -1 \\ -2
+\end{bmatrix} $$
+
+\vspace{0.3cm}
+
+\quest A distância de um ponto $A$ a uma reta $r$ é dado por
+$$d(A,r) = \inf\{ \|X-A\|: X \in r\}$$
+Se $A=\begin{bmatrix}
+   1\\ 1 \\ 1
+\end{bmatrix}$ e $r: \begin{bmatrix}
+   0 \\ -1 \\ 0 
+\end{bmatrix}+ t\begin{bmatrix}
+   2 \\ 0 \\ 0
+\end{bmatrix}.$
+Ache a distância $d(A,r)$ neste caso. Com a justificativa.
+
+\vspace{0.3cm}
+
+\quest Ache a equação geral do plano que passa pelos pontos $A$, $B$ e $C$ dados por:
+$$ A= \begin{bmatrix}
+   2 \\ 0 \\ 0
+\end{bmatrix}\text{  } B= \begin{bmatrix}
+   0 \\ 1 \\ 0 
+\end{bmatrix}\text{ e }C =\begin{bmatrix}
+   0 \\ 0 \\ -1
+\end{bmatrix}$$
+
+
+\vspace{0.3cm}
+
+\quest Ache a projeção ortogonal do ponto $Q=\begin{bmatrix}
+   1\\ 0 \\ 0
+\end{bmatrix}$ no plano de equação geral $2x -2y +z =0$
+
+\vspace{0.3cm}
+
+\quest Considere o plano $\Pi_1: x-2z = 2$. Rodando todos os pontos desse
+plano de \ang{45} em torno do eixo $z$, qual é a equação deste novo plano
+$\Pi_2 = R_{\ang{45}}^3(\Pi_1)?$
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

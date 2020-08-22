@@ -1,0 +1,331 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+\title[diagonalização]{Diagonalização}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{16 de junho}
+
+\begin{document}
+
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}{Exemplo: Equação de recorrência}
+  As relações de recorrência são formas de descrever a evolução de uma variável conforme avançamos no
+  "tempo". No nosso caso o "tempo" é o conjunto de números naturais $\mathbb{N}$ ou inteiros $\mathbb{Z}$.
+  Vamos analisar um exemplo simples. Tomei um empréstimo de $\text{R}\$1000,00$ com juros de $6\%$ ao ano.
+  Quanto devo pagar ao fim do quinto anos (O juros serão cobrados uma vez ao ano!)
+  \begin{itemize}
+    \item $P_k = 1.06*P_{k-1}$  relação de recorrência.
+    \item $P_k = (1.06)^k P_0$ solução (permite resolver o problema)
+    \item $ P_5 = (1.06)^5*(1000) = \text{R}\$1338.23$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+  \begin{gather*}
+    I_k = 2I_{k-1}\\
+    I_{10} = 2^{10}I_0 = 1024I_0
+  \end{gather*}
+  \begin{gather*}
+    I_k = 2I_{k-1} -2D_{k-1} \\
+    D_k = 0.01*I_{k-1} \\
+    \begin{bmatrix}
+      I_k \\ D_k
+    \end{bmatrix} = \begin{pmatrix}
+      2 & -1 \\ 0.01 & 0
+    \end{pmatrix}\begin{bmatrix}
+      I_{k-1} \\ D_{k-1}
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      I_{10} \\ D_{10}
+    \end{bmatrix} = \begin{pmatrix}
+      2 & -1 \\ 0.01 & 0
+    \end{pmatrix}^{10}\begin{bmatrix}
+      I_{0} \\ D_{0}
+    \end{bmatrix}
+\end{gather*}
+
+\end{frame}
+\begin{frame}{Sequência de Fibonacci}
+  \begin{gather*}
+    F_0=1\text{ }F_1=1 \\
+    F_{k+1}=F_k + F_{k-1} \text{ recorrência de ordem 2} 
+  \end{gather*}
+  Podemos escrever a equação de Fibonacci em um sistema:
+  \begin{gather*}
+    F_{k+1}=F_k + F_{k-1} \\
+    F_k = F_k \text{ ou } \\
+    \begin{bmatrix}
+      F_{k+1} \\
+      F_k
+    \end{bmatrix}= \begin{bmatrix}
+      1 & 1 \\ 1 & 0
+    \end{bmatrix}\begin{bmatrix}
+      F_{k} \\ F_{k-1}
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      F_{10} \\
+      F_{9}
+    \end{bmatrix}= \begin{bmatrix}
+      1 & 1 \\ 1 &0
+    \end{bmatrix}^9 \begin{bmatrix}
+      1 \\ 1
+    \end{bmatrix}
+  \end{gather*}
+  
+\end{frame}
+
+\begin{frame}{Exemplo do livro}
+  \begin{gather*}
+    a_{k+1} = \frac{a_k}{2} + \frac{j_k}{4} \\
+    j_{k+1} = 2a_k
+  \end{gather*}
+  \begin{gather*}
+    \begin{bmatrix}
+      a_{k+1} \\
+      j_{k+1}
+    \end{bmatrix} = \begin{bmatrix}
+      \frac{1}{2} & \frac{1}{4} \\
+      2 & 0
+    \end{bmatrix}\begin{bmatrix}
+      a_k \\ b_k
+    \end{bmatrix} \text{ com } \begin{bmatrix}
+      a_0 \\ j_0 
+    \end{bmatrix}= \begin{bmatrix}
+      400 \\ 40
+    \end{bmatrix}
+  \end{gather*}
+  
+\end{frame}
+
+\begin{frame}{Problema geral}
+
+  \begin{gather*}
+    \mathbf{v}_{k+1} = A \mathbf{v}_k \\
+    \text{ para achar a solução em tempo n} \\
+    \mathbf{v}_n = A^n \mathbf{v}_0
+\end{gather*}
+Como calcular $A^n$ ?
+  
+\end{frame} 
+
+\begin{frame}
+  Uma matriz quadrada $D =[d_{ij}]$ é uma matriz diagonal 
+  quando $d_{ij}=0$ para $i\neq j.$ Neste caso é mais 
+  fácil achar a pontência $D^n$, pois esta também será
+  diagonal, bastando calcular as potências dos números 
+  na diagonal.
+  \textbf{exemplo}
+  
+  \begin{gather*}
+    A = \begin{bmatrix}
+      2 & 0 \\ 0 & 1
+    \end{bmatrix} \text{ então } A^{10} = \begin{bmatrix}
+      1024 & 0 \\ 0 & 1
+    \end{bmatrix}
+  \end{gather*}
+\end{frame}
+
+\begin{frame}{Tentando facilitar as contas}
+  Considere o problema geral
+  $$ \mathbf{v}_{k+1} = A \mathbf{v}_k $$ e nossa intensão
+  é achar uma fórmula para  $\mathbf{v}_n$ em função de 
+  $\mathbf{v}_0$. Vamos escolher uma matriz invertível 
+  $P$, com as dimensões de $A$ e fazer a mudança de variável 
+
+  $$ \mathbf{v_k} = P\mathbf{u_k} \text{  ou  } P^{-1}\mathbf{v_k} = \mathbf{u_k} $$
+  Com essa modificação nossa fórmula de recorrência fica:
+  \begin{gather*}
+    P\mathbf{u_{k+1}}=AP\mathbf{u}_k  \implies\\
+    \mathbf{u_{k+1}} = P^{-1}AP\mathbf{u_k} \\
+    \mathbf{u_{k+1}} = B\mathbf{u_k}  \text{ com } B = P^{-1}AP\\
+  \end{gather*}
+  
+\end{frame}
+\begin{frame}{Será que $B$ pode ser diagonal?}
+  Se $B$ for diagonal então teríamos um jeito de calcular $A^n$ a partir de $B^n$ pois:
+  \begin{gather*}
+    B^n = (P^{-1}AP)^n=P^{-1}APP^{-1}AP\cdots P^{-1}AP = P^{-1}A^nP \implies \\
+    A^n = PB^nP^{-1}
+  \end{gather*}
+  \textbf{Exemplo:}
+  \begin{gather*}
+    \begin{bmatrix}
+      -1 & 3 \\
+      0 & 2
+    \end{bmatrix} = \begin{bmatrix}
+      1 & 1 \\ 1 & 0 
+    \end{bmatrix}\begin{bmatrix}
+      2 & 0 \\ 0 & -1
+    \end{bmatrix}\begin{bmatrix}
+      0 & 1 \\ 1 & -1
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      -1 & 3 \\
+      0 & 2
+    \end{bmatrix}^5 = \begin{bmatrix}
+      1 & 1 \\ 1 & 0 
+    \end{bmatrix}\begin{bmatrix}
+      2^5 & 0 \\ 0 & (-1)^5
+    \end{bmatrix}\begin{bmatrix}
+      0 & 1 \\ 1 & -1
+    \end{bmatrix} = \begin{bmatrix}
+      -1 & 33 \\ 0 & 32
+    \end{bmatrix}
+  \end{gather*}
+  
+\end{frame}
+
+\begin{frame}{Problema}
+  Será que para toda matriz quadrada $A$ existe uma 
+  matriz $P$ invertível talque $P^{-1}AP=B$ seja uma 
+  matriz diagonal?
+  
+  Vamos tentar com uma matriz $2\times 2$
+
+\textbf{Experimento:}
+ suponha que $A= \begin{pmatrix}
+   1 & 1 \\ 1 & 0
+ \end{pmatrix}$ e que existe uma matriz $P=\begin{bmatrix}
+   p_1 & q_1 \\ p_2 & q_2
+ \end{bmatrix}$ que seja invertível e que 
+ $P^{-1}AP = \begin{bmatrix}
+   \lambda_1 & 0 \\ 0 & \lambda_2
+ \end{bmatrix}$ Então, multiplicando à esquerda por $P$ temos:
+ $$ A\begin{bmatrix}
+  p_1 & q_1 \\ p_2 & q_2
+\end{bmatrix} = \begin{bmatrix}
+  p_1 & q_1 \\ p_2 & q_2
+\end{bmatrix}\begin{bmatrix}
+  \lambda_1 & 0 \\ 0 & \lambda_2
+\end{bmatrix}$$
+\end{frame}
+
+\begin{frame}
+  Vamos agora igualar as colunas das matrizes dos dois lados da equação:
+  Para a primeira coluna temos.
+  $$ A\begin{bmatrix}
+    p_1 \\ p_2
+  \end{bmatrix} = \begin{bmatrix}
+    p_1 & q_1 \\ p_2 & q_2
+  \end{bmatrix}\begin{bmatrix}
+    \lambda_1 \\ 0
+  \end{bmatrix} = \lambda_1 \begin{bmatrix}
+    p_1 \\ p_2
+  \end{bmatrix} $$
+  e similarmente para a segunda coluna:
+  $$ A \begin{bmatrix}
+    q_1 \\ q_2
+  \end{bmatrix} = \begin{bmatrix}
+    p_1 & q_1 \\ p_2 & q_2
+  \end{bmatrix}\begin{bmatrix}
+    0 \\ \lambda_2
+  \end{bmatrix} = \lambda_2 \begin{bmatrix}
+    q_1 \\ q_2
+  \end{bmatrix} $$ Estas equações também podem ser 
+  escritas como:
+  $$ (A - \lambda_1I) \begin{bmatrix}
+    p_1 \\ p_2
+  \end{bmatrix} = 0 \text{ e } (A - \lambda_2I) \begin{bmatrix}
+    q_1 \\ q_2
+  \end{bmatrix} = 0$$
+\end{frame}
+
+\begin{frame}
+  Para $P$ ser invertível as colunas não podem ser nulas, então
+  devemos ter soluções não triviais destas equações homogêneas.
+  ou seja $\det(\lambda_1I -A) = 0$ e $\det(\lambda_2I-A)=0$
+  Isso vai restringir as possibilidades para $\lambda_1$ e $\lambda_2$.
+  Calculando o $\det(\lambda I -A)$ temos
+  \begin{gather*}
+    \det(\lambda I -A) = \begin{vmatrix}
+      \lambda - 1 & -1 \\
+      -1 & \lambda
+    \end{vmatrix} = \lambda^2 -\lambda -1 = p(\lambda)
+  \end{gather*}
+  As raízes deste polinômio serão os nossos $\lambda_1$ e $\lambda_2$. Chamaremos $p(\lambda)$ de polinômio característico
+  de $A$ e suas raízes (que poderiam ser números complexos), chamaremos de autovalores de $A$.
+  No nosso caso experimental temos duas raízes
+  $$\lambda_1=\frac{1+\sqrt{5}}{2} \text{ e } \lambda_2=\frac{1-\sqrt{5}}{2}$$
+  Agora precisamos achar as colunas $\begin{bmatrix}
+    p_1 \\ p_2
+  \end{bmatrix}$ e $\begin{bmatrix}
+    q_1 \\ q_2
+  \end{bmatrix}$
+
+\end{frame}
+\begin{frame}{encontrando os autovetores}
+
+  Para $\lambda_1$ temos
+  \begin{gather*}
+    p_1 + p_2 = \lambda_1 p_1 \\
+    p_1 = \lambda_1 P_2 \\
+    \text{ soluções são da forma } \\
+    p\begin{bmatrix}
+      \lambda_1 \\ 1
+    \end{bmatrix}=\lambda\begin{bmatrix}
+      \frac{1+\sqrt{5}}{2} \\ 1
+    \end{bmatrix}
+  \end{gather*}
+  A outra equação é similar e temos
+  \begin{gather}
+    \begin{bmatrix}
+      q_1 \\ q_2
+    \end{bmatrix} = \lambda\begin{bmatrix}
+    \frac{1 -\sqrt{5}}{2} \\ 1
+    \end{bmatrix} \\ 
+    P = \begin{bmatrix}
+      \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\ 1 & 1
+    \end{bmatrix} \text{ e } P^{-1} =\frac{1}{\sqrt{5}}\begin{bmatrix}
+      1 & \frac{-1+\sqrt{5}}{2} \\
+      -1 & \frac{1+\sqrt{5}}{2}
+    \end{bmatrix} 
+  \end{gather}
+\end{frame}
+\begin{frame}{Sumário}
+  Se $A$ é uma matriz quadrada $n \times n$
+  \begin{itemize}
+    \item $p(\lambda) = \det(\lambda I - A)$ é um polinômio de grau $n$
+    \item Suas raízes serão chamadas autovalores de $A$
+    \item Um vetor não nulo $\mathbf{v}$ que satisfaz $A\mathbf{v}-\lambda\mathbf{v}=0$ é chamado de autovetor associado a $\lambda$.
+    \item Se encontramos $n$ autovetores linearmente independentes $\mathbf{v}_1\dots \mathbf{v}_n$, então a matriz $P=[\mathbf{v_1}\cdots\mathbf{v}_n]$ é invertível e $P^{-1}AP$ é diagonal.
+    \item No caso acima dizemos que $A$ é diagonalizável.
+  \end{itemize}
+  
+\end{frame}
+\begin{frame}
+  $$A = \begin{bmatrix}
+    -6 & 5 \\ 0 & 4
+  \end{bmatrix}$$
+  \begin{enumerate}
+    \item Achar o polinômio característico e os auto valores.
+    \item Achar os autovetores e a matriz $P$ inversível tal que $P^{-1}AP$ seja diagonal.
+  \end{enumerate}
+\end{frame}
+\end{document}

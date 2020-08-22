@@ -1,0 +1,318 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+\title[Exercícios]{Exercícios}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{9 de junho}
+
+\begin{document}
+
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}{}
+  Seria bom ter a imagem do que acontece em dimensão 3
+  para entender algumas provas:
+  $$ \det(A) = \left( a_{11}
+  \begin{vmatrix}
+   a_{22} & a_{23} \\
+   a_{32} & a_{33}
+ \end{vmatrix} -
+  a_{21}
+  \begin{vmatrix}
+   a_{12} & a_{13} \\
+   a_{32} & a_{33}
+ \end{vmatrix} + a_{31}
+ \begin{vmatrix}
+   a_{12} & a_{13}\\
+   a_{22} & a_{23}
+ \end{vmatrix} \right)$$
+ onde 
+ $$ A = \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33} 
+   \end{bmatrix}$$
+\end{frame}
+
+\begin{frame}{Exercício 1 - pg183}
+ \begin{gather*}
+   \begin{vmatrix}
+     a+px & b+qx & c+rx \\
+     p+ux & q+vx & r+wx \\
+     u+ ax & v+bx & w + cx
+   \end{vmatrix}= \\ 
+   \textcolor{red}{\begin{vmatrix}
+    a & b & c \\
+    p+ux & q+vx & r+wx \\
+    u+ ax & v+bx & w + cx
+  \end{vmatrix}} + \textcolor{blue}{\begin{vmatrix}
+    px & qx & rx \\
+    p+ux & q+vx & r+wx \\
+    u+ ax & v+bx & w + cx
+  \end{vmatrix}}
+ \end{gather*} 
+ 
+\end{frame}
+\begin{frame}
+\begin{gather*}
+  \textcolor{red}{\begin{vmatrix}
+    a & b & c \\
+    p+ux & q+vx & r+wx \\
+    u+ ax & v+bx & w + cx
+  \end{vmatrix}}= \\
+  \textcolor{red}{\begin{vmatrix}
+    a & b & c \\
+    p & q & r \\
+    u+ ax & v+bx & w + cx
+  \end{vmatrix}} + \textcolor{red}{\begin{vmatrix}
+    a & b & c \\
+    ux & vx & wx \\
+    u+ ax & v+bx & w + cx
+  \end{vmatrix}} = \\
+  \textcolor{red}{\begin{vmatrix}
+    a & b & c \\
+    p & q & r \\
+    u  & v & w 
+  \end{vmatrix}} +\textcolor{red}{\begin{vmatrix}
+    a & b & c \\
+    p & q & r \\
+   ax & bx & cx
+  \end{vmatrix}} =
+  \textcolor{red}{\begin{vmatrix}
+    a & b & c \\
+    p & q & r \\
+    u & v & w 
+  \end{vmatrix}}
+\end{gather*}
+\end{frame}
+
+\begin{frame}{Parte Azul}
+  \begin{gather*}
+    \textcolor{blue}{\begin{vmatrix}
+      px & qx & rx \\
+      p+ux & q+vx & r+wx \\
+      u+ ax & v+bx & w + cx
+    \end{vmatrix}} = \\
+    \textcolor{blue}{x\begin{vmatrix}
+      p & q & r \\
+      p & q & r \\
+      u+ ax & v+bx & w + cx
+    \end{vmatrix}} + \textcolor{blue}{x\begin{vmatrix}
+      p & q & r \\
+      ux & vx & wx \\
+      u+ ax & v+bx & w + cx
+    \end{vmatrix}} =\\
+    \textcolor{blue}{x^2\begin{vmatrix}
+      p & q & r \\
+      u & v & w \\
+      u  & v & w 
+    \end{vmatrix}} + \textcolor{blue}{x^2\begin{vmatrix}
+      p & q & r \\
+      u & v & w \\
+      ax & bx & cx
+    \end{vmatrix}}=\textcolor{blue}{x^3\begin{vmatrix}
+      p & q & r \\
+      u & v & w \\
+      a & b & c
+    \end{vmatrix}}
+  \end{gather*}
+\end{frame}
+
+\begin{frame}{Juntando as partes}
+  \begin{gather*}
+    \begin{vmatrix}
+      a+px & b+qx & c+rx \\
+      p+ux & q+vx & r+wx \\
+      u+ ax & v+bx & w + cx
+    \end{vmatrix}= (1+x^3)\begin{vmatrix}
+      a & b & c \\
+      p & q & r \\
+      u & v & w 
+    \end{vmatrix}
+  \end{gather*} 
+\end{frame}
+ 
+\begin{frame}{Exercício 4 pg 183}
+  \begin{gather*}
+    \begin{vmatrix}
+      1 & a & a^3 \\
+      1 & b & b^3 \\
+      1 & c & c^3
+    \end{vmatrix} = \begin{vmatrix}
+      1 & a & a^3 \\
+      0& b-a & b^3-a^3 \\
+      0 & c-a & c^3-a^3
+    \end{vmatrix} = \begin{vmatrix}
+      1 & a & 0 \\
+      0 & b-a & b^3 -ba^2 \\
+      0 & c-a & c^3 -ca^2
+    \end{vmatrix} = \\
+   \begin{vmatrix}
+    1 & 0 & 0 \\
+    0 & b-a & b^3 -ba^2 \\
+    0 & c-a & c^3 -ca^2
+  \end{vmatrix} = (b-a)(c-a) \begin{vmatrix}
+    1 & 0& 0 \\
+    0 & 1 & b(b+a) \\
+    0 & 1 & c(c+a)
+  \end{vmatrix}
+  \end{gather*}
+  Na segunda igualdade subtraimos $a^2$ vezes a segunda coluna da terceira coluna.
+  e na terceira fizemos a segunda coluna menos $a$ vezes a primeira.
+\end{frame}
+\begin{frame}
+ \begin{gather*} \begin{vmatrix}
+    1 & a & a^3 \\
+    1 & b & b^3 \\
+    1 & c & c^3
+  \end{vmatrix} = (b-a)(c-a)(c(c+a)-b(b+a) \textcolor{green}{+cb -cb})= \\
+  (b-a)(c-a)(c-b)(a+b+c)
+\end{gather*}
+\end{frame}
+
+\begin{frame}{Exercício 5, pg183}
+\begin{gather*}
+  \begin{vmatrix}
+    3R_1 + 2 R_3 \\
+    2R_1 +5 R_2
+  \end{vmatrix} = \begin{vmatrix}
+    3R_1 + 2R_3 \\ 
+    2R_1
+  \end{vmatrix} + \begin{vmatrix}
+    3R_1 + 2 R_3 \\
+    5R_2
+  \end{vmatrix} = \\
+ 4 \begin{vmatrix}
+    R_3 \\ R_1
+  \end{vmatrix} + 15\begin{vmatrix}
+    R1 \\ R_2
+  \end{vmatrix} + 10 \begin{vmatrix}
+    R_3 \\ R_2
+  \end{vmatrix}
+\end{gather*}
+\end{frame}
+\begin{frame}{Se $R_3 = R_2$}
+  \begin{gather*}
+    \begin{vmatrix}
+      3R_1 + 2 R_2 \\
+      2R_1 +5 R_2
+    \end{vmatrix} = \begin{vmatrix}
+      3R_1^T + 2 R_2^T &
+      2R_1^T +5 R_2^T
+    \end{vmatrix} = \\
+    \det(\begin{pmatrix}
+      R_1^T & R_2^T
+    \end{pmatrix}\begin{pmatrix}
+      3 & 2 \\ 2 & 5
+    \end{pmatrix}) = \begin{vmatrix}
+      R_1 \\ R_2
+    \end{vmatrix}\begin{vmatrix}
+      3 & 2 \\ 2 & 5
+    \end{vmatrix} = 55
+  \end{gather*}
+\end{frame}
+
+\begin{frame}{Exercício 5 pg 148}
+  $A$ é $3\times 3$ e
+  \begin{gather*}
+    \det(2A^{-1})=-4 = \det(A^3.{B^{-1}}^T) \implies \\
+    2^3\det(A^{-1}) = 8/\det(A)=-4 \implies \det(A) = -2 \\
+    -4 = \det(A^3)\det(B^{-1}) = \det(A)^3\det(B)^{-1} \implies \\
+    \det(B) = \frac{1}{-4}\det(A)^3 = 2
+  \end{gather*}
+\end{frame}
+
+\begin{frame}{Exercício 8, pg 148}
+  a)
+\begin{gather*}
+  \begin{bmatrix}
+    2 & 1 \\ 3 & 7
+  \end{bmatrix}\begin{bmatrix}
+    x \\ y
+  \end{bmatrix}=\begin{bmatrix}
+    1 \\ -2
+  \end{bmatrix} \\
+x={ \begin{vmatrix}
+  1 & 1 \\
+  -2 & 7
+\end{vmatrix} \over \begin{vmatrix}
+  2 & 1 \\ 3 & 7
+\end{vmatrix}} \text{ e }y={ \begin{vmatrix}
+  2 & 1 \\
+  3 & -2
+\end{vmatrix} \over \begin{vmatrix}
+  2 & 1 \\ 3 & 7
+\end{vmatrix}}
+x=\frac{9}{11} \text{ e } y = \frac{-7}{11}
+\end{gather*}
+\end{frame}
+
+\begin{frame}
+  \begin{gather*}
+    \begin{bmatrix}
+      4 & -1 & 3 \\
+      6 & 2 & -1 \\
+      3 & 3 & 2
+    \end{bmatrix}\begin{bmatrix}
+      x \\ y \\ z
+    \end{bmatrix} = \begin{bmatrix}
+      1 \\ 0 \\ -1
+    \end{bmatrix} \\
+    x = { \begin{vmatrix}
+      1 & -1 & 3 \\
+      0 & 2 & -1 \\
+      -1 & 3 &2
+     \end{vmatrix} \over \begin{vmatrix}
+       4 & -1 & 3 \\
+       6 & 2 & -1 \\
+       3 & 3 & 2
+     \end{vmatrix}} \text{ e }
+    y = { \begin{vmatrix}
+     4& 1 &  3 \\
+     6 & 0 &  -1 \\
+      3&-1 & 2
+     \end{vmatrix} \over \begin{vmatrix}
+       4 & -1 & 3 \\
+       6 & 2 & -1 \\
+       3 & 3 & 2
+     \end{vmatrix}} \text{ e }
+     z = { \begin{vmatrix}
+      4 & -1 & 1 \\
+      6 & 2 & 0 \\
+      3 & 3 &-1
+     \end{vmatrix} \over \begin{vmatrix}
+       4 & -1 & 3 \\
+       6 & 2 & -1 \\
+       3 & 3 & 2
+     \end{vmatrix}} \\
+     x=\frac{12}{79}\text{ }y=\frac{-37}{79}\text{ }z=\frac{-2}{79}
+\end{gather*}
+\end{frame}
+
+\end{document}

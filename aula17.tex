@@ -1,0 +1,181 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+\usepackage{siunitx}
+
+\title[Retas e planos]{Retas e planos em $\mathbb{R}^3$}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{14 de julho de 2020}
+
+\begin{document}
+
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Equação de uma reta}
+
+  \begin{itemize}
+    \item $P$ é um ponto de $\mathbb{R}^3$
+    \item $\mathbf{v} um vetor$
+    \item O conjunto $\{ \mathbf{x} : x = P+t\mathbf{v}, t\in \mathbb{R}\}$ é uma reta em $\mathbb{R}^3$
+    \item $r:P+t\mathbf{v}$ é a equação vetorial de uma reta.
+    \item $\begin{bmatrix}
+      x \\ y \\ z
+    \end{bmatrix} = \begin{bmatrix}
+      x_0 \\ y_0 \\ z_0
+    \end{bmatrix}+ \begin{bmatrix}
+      tv_1 \\ tv_2 \\ tv_3
+    \end{bmatrix}$ é a equação paramétrica
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+
+  Para determinar a equação vetorial de uma reta, usamos um ponto $P$ e um vetor $\mathbf{v}$. Será que
+  sempre que tomarmos $Q\neq P$ e $\mathbf{u} \neq \mathbf{v}$ as retas $P+t\mathbf{v}$ e $Q+s\mathbf{u}$ são diferentes?
+
+\end{frame}
+
+\begin{frame} {Problemas básicos}
+
+  \begin{itemize}
+    \item achar a intersecção de duas retas.
+    \item projetar ortogonalmente um ponto sobre uma reta
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Exemplo}
+  Achar a intersecção das retas:
+  \begin{gather*}
+    \begin{array}{ccc}
+      x &= &1-3t \\
+      y & = & 2+5t\\
+      z & = & 1+t
+    \end{array}\text{ e }\begin{array}{ccc}
+      x &=& -1+s \\
+      y &=& 3-4s \\
+      z &=& 1-s
+    \end{array}
+  \end{gather*}
+\end{frame}
+
+\begin{frame} {Exemplo 2}
+  Achar a projeção ortogonal do ponto $Q = \begin{bmatrix}
+    1 \\ 2 \\ 0
+  \end{bmatrix}$ na reta $r: \begin{bmatrix}
+    0 \\ 0 \\ 2
+  \end{bmatrix}+ t\begin{bmatrix}
+    1 \\ 1 \\ 1
+  \end{bmatrix}$
+\end{frame}
+
+\begin{frame}{Equações vetoriais e paramétricas de um plano em $\mathbb{R}^3$}
+  \begin{itemize}
+    \item $P = \begin{bmatrix}
+      p_1 \\ p_2 \\ p_2
+    \end{bmatrix}$ é um ponto.
+    \item $\mathbf{v}=\begin{bmatrix}
+      v_1 \\ v_2 \\ v_3
+    \end{bmatrix}$ e $\mathbf{u} =\begin{bmatrix}
+      u_1 \\ u_2 \\ u_3
+    \end{bmatrix}$ são vetores LI 
+    \item $\Pi:P+t\mathbf{v} + s\mathbf{u}$ equação do plano.
+    \item $\begin{array}{ccc}
+    x&=&p_1 + tv_1 + su_1 \\
+    y&=& p_2 + tv_2 + su_2 \\
+    z&=& p_3 + tv_3 + su_3
+  \end{array}$ é a equação paramétrica
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Direção normal a um plano}
+
+  O vetor $\mathbf{n}=\mathbf{v}\times \mathbf{u}$ determina um vetor perpendicular ao plano $\Pi$. Dizem os que $\mathbf{n}$ é normal ao plano
+  $\Pi$ que pode ser caracterizado como os pontos $X$ tais que $(X-P)\cdot \mathbf{n}=0$, chamada de equação vetorial do plano.
+
+  Se temos $\mathbf{n} = \begin{bmatrix}
+    a \\ b \\ c
+  \end{bmatrix}$ e $P = \begin{bmatrix}
+    p_1 \\ p_2 \\ p_2
+  \end{bmatrix}$  um ponto do plano. Então as coordenadas de qualquer outro ponto do plano satisfaz:
+  \begin{gather*}
+    \left(\begin{bmatrix}
+      x \\ y \\ z
+    \end{bmatrix} - \begin{bmatrix}
+      p_1 \\ p_2 \\ p_3
+    \end{bmatrix}\right)\cdot \begin{bmatrix}
+      a \\ b \\ c 
+    \end{bmatrix}= 0 \implies \\
+    ax+by+cz = F \\
+    F = P\cdot \mathbf{n}
+  \end{gather*}
+  A última equação é a equação geral de um plano no espaço.
+\end{frame}
+
+\begin{frame}{problemas básicos}
+Intersecção de dois planos.
+\begin{gather*}
+  \left\{ \begin{array}{lccc}
+    \Pi_1: & x+y+z & = & 1 \\
+    \Pi_2: & 2x-y-2z& = & 3
+  \end{array}\right. \\
+  \begin{bmatrix}
+    1 & 1 & 1 \\
+    2 & -1 & -2
+  \end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+  \end{bmatrix} = \begin{bmatrix}
+    1 \\ 3
+  \end{bmatrix} \\
+  \begin{array}{|ccc|c|}\hline
+    1 & 1 & 1 & 1 \\
+    2 & -1 & -2 & 3 \\ \hline
+  \end{array} \to \begin{array}{|ccc|c|}\hline
+    1 & 1 & 1 & 1 \\
+    0 & -3 & -4 & 1 \\ \hline
+  \end{array} \to \\
+  \begin{array}{|ccc|c|}\hline
+    1 & 1 & 1 & 1 \\
+    0 & 1 & 4/3& -1/3\\ \hline
+  \end{array} \to \begin{array}{|ccc|c|}\hline
+    1 & 0 & -1/3 & 4/3 \\
+    0 & 1 & 4/3& -1/3\\ \hline
+  \end{array} 
+\end{gather*}
+  
+\end{frame}
+
+\begin{frame}
+  Projetar um ponto sobre um plano
+
+\textbf{Exemplo:} Projetar o ponto $P = \begin{bmatrix}
+  2 \\ 2 \\ 3
+\end{bmatrix}$ ortogonalmente no plano $x+y+z=1$
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,392 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+\usepackage{siunitx}
+
+\title[diagonalização]{Sistemas Dinâmicos Lineares}
+\author{MAP 2110 - Diurno}
+\institute{IME USP}
+\date{30 de junho}
+
+\begin{document}
+
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{Quando o polinômio característico tem raízes duplas}
+  \begin{gather*}
+    A= \begin{bmatrix}
+      1 & 0 \\ 0 & 1
+    \end{bmatrix} \text{ e } B= \begin{bmatrix}
+      1 & 1 \\ 0 & 1 
+    \end{bmatrix}
+  \end{gather*}
+  têm o mesmo polinômio característico $p(\lambda) = \lambda^2 -2\lambda +1$ ( e portanto os mesmos autovalores), mas não tem os mesmos autovetores!
+  A segunda matriz tem apenas uma direção de autovetores.
+\end{frame}
+
+\begin{frame}{Recuperando informações com testes}
+  \begin{gather*}
+    \mathbf{v}_1 = \begin{bmatrix}
+      -1 \\ 2
+    \end{bmatrix}\text{ }\mathbf{v}_2 = \begin{bmatrix}
+      1 \\ 1
+    \end{bmatrix} \text{ e } \mathbf{u}=\begin{bmatrix}
+      1 \\ 2
+    \end{bmatrix}
+  \end{gather*}
+  Se $\mathbf{v}_1$ é um autovetor associado ao autovalor $\lambda_1=1$ de uma matriz $A$ e $\mathbf{v}_2$ é outro
+  autovetor de $A$, será que podemos achar a matriz original $A$ sabendo que 
+  $$ A\mathbf{u}=\begin{bmatrix} \frac{11}{3}\\
+    \frac{14}{3}
+    \end{bmatrix} ?$$
+\end{frame}
+
+\begin{frame}
+  \begin{gather*}
+    A\mathbf{v}_1 = \mathbf{v}_1 \\
+    A\mathbf{v}_2 = \lambda_2\mathbf{v}_2\\
+    P= \begin{bmatrix}
+      -1 & 1 \\ 2 & 1
+    \end{bmatrix}\text{ e } P^{-1}=\frac{1}{3}\begin{bmatrix}
+      -1 & 1 \\ 2 & 1
+    \end{bmatrix}  \\
+    P^{-1}AP=\begin{bmatrix}
+      1 & 0 \\ 0 & \lambda_2
+    \end{bmatrix}\\
+    A\mathbf{u}=
+    \frac{1}{3} \begin{bmatrix}
+      -1 & 1 \\ 2 & 1
+    \end{bmatrix} \begin{bmatrix}
+      1 & 0 \\ 0 & \lambda_2
+    \end{bmatrix} \begin{bmatrix}
+      -1 & 1 \\ 2 & 1
+    \end{bmatrix}\begin{bmatrix}
+      1 \\ 2
+    \end{bmatrix} = \frac{1}{3}\begin{bmatrix}
+      11 \\ 14
+    \end{bmatrix} \\
+    \lambda_2=3
+  \end{gather*}
+\end{frame}
+
+\begin{frame}{trajetória de um sistema}
+  \begin{gather*}
+    \mathbf{x}_{k+1} =A\mathbf{x}_k \\
+    \mathbf{x}_0 = \mathbf{v}
+  \end{gather*}
+  Então a solução deste sistema é $\mathbf{x}_k = A^k\mathbf{v}$ e a 
+  sequência de vetores $\{\mathbf{v}_k\}$ com $v_k = A^k\mathbf{v}$ dizemos 
+  que é a trajetória que passa por $\mathbf{v}$. De uma forma geral
+  a teoria dos sistemas dinâmicos procura saber o que acontece
+  com as trajetórias do sistema.
+  
+\end{frame}
+
+\begin{frame}{Sistemas dinâmicos e autovalores}
+  No caso linear, o que acontece com as trajetórias depende
+  dos autovalores da matriz $A$.
+  \textbf{Exemplo}
+  \begin{gather*}
+    \begin{bmatrix}
+      x_{k+1} \\ y_{k+1} 
+    \end{bmatrix} = \begin{bmatrix}
+      3 & 0 \\ 0 & 2
+    \end{bmatrix}\begin{bmatrix}
+      x_k \\ y_k
+    \end{bmatrix}
+  \end{gather*}
+  que tem a solução
+  \begin{gather*}
+    \begin{bmatrix}
+      x_k \\ y_k 
+    \end{bmatrix} =\begin{bmatrix}
+      3^kx_0 \\ 2^k y_0
+    \end{bmatrix} = 3^kx_0\textcolor{blue}{\begin{bmatrix}
+      1 \\ 0
+    \end{bmatrix}} + 2^k y_0 \textcolor{green}{\begin{bmatrix}
+      0 \\ 1
+    \end{bmatrix}}
+  \end{gather*}
+  
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+  \item Temos, neste caso, dois autovalores reais, com autovalores 
+  maiores que $1$, 
+
+  \item como consequência, as trajetórias por 
+  qualquer ponto fora da origem se afastarão cada vez mais da origem.
+
+  \item O autovalor $3$ é maior do que $2$ (em valor absoluto),
+  então dizemos que é um autovalor dominante e as trajetórias
+  se acumularão na direção do autovetor associado a este autovalor.
+
+  \item A origem $(0,0)$ é um ponto de equilíbrio instável
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo 2}
+  \begin{gather*}
+    \begin{bmatrix}
+      x_{k+1} \\ y_{k+1} 
+    \end{bmatrix} = \begin{bmatrix}
+      1 & 0 \\ 0 & 0.5
+    \end{bmatrix}\begin{bmatrix}
+      x_k \\ y_k
+    \end{bmatrix}
+  \end{gather*}
+  \begin{gather*}
+  \begin{bmatrix}
+    x_k \\ y_k 
+  \end{bmatrix} =\begin{bmatrix}
+    x_0 \\ (0.5)^k y_0
+  \end{bmatrix} = x_0\textcolor{blue}{\begin{bmatrix}
+    1 \\ 0
+  \end{bmatrix}} + (0.5)^k y_0 \textcolor{green}{\begin{bmatrix}
+    0 \\ 1
+  \end{bmatrix}}
+\end{gather*}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item Um autovalor é $1$ e o outro tem valor absoluto menor que $1$.
+    \item Como $(0.5)^k$ tende a zero a trajetória se aproxima de um equilíbrio.
+    \item $x_0\begin{bmatrix}
+      1 \\ 0
+    \end{bmatrix}$ é um equilíbrio para todo $x_0$.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Exemplo 3}
+  \begin{gather*}
+    \begin{bmatrix}
+      x_{k+1} \\ y_{k+1} 
+    \end{bmatrix} = \begin{bmatrix}
+      0.4 & 0 \\ 0 & 0.3
+    \end{bmatrix}\begin{bmatrix}
+      x_k \\ y_k
+    \end{bmatrix}
+  \end{gather*}
+  \begin{gather*}
+  \begin{bmatrix}
+    x_k \\ y_k 
+  \end{bmatrix} =\begin{bmatrix}
+    (0.4)^kx_0 \\ (0.3)^k y_0
+  \end{bmatrix} = (0.4)^k x_0\textcolor{blue}{\begin{bmatrix}
+    1 \\ 0
+  \end{bmatrix}} + (0.3)^k y_0 \textcolor{green}{\begin{bmatrix}
+    0 \\ 1
+  \end{bmatrix}}
+\end{gather*}
+  
+\end{frame}
+\begin{frame}
+  \begin{itemize}
+    \item Dois autovalores com valor absoluto menor que $1$
+    \item A trajetória se aproxima da origem sempre.
+    \item A origem é um ponto de equilíbrio estável.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Caso de uma matriz diagonalizável}
+  Vamos supor que uma matriz $2 \times 2$ seja diagonalizável com autovalores $\lambda_1$ e
+  $\lambda_2$ com autovetores associados:
+  $$ \mathbf{v}_1 = \begin{bmatrix}
+    p_1 \\ p_2
+  \end{bmatrix} \text{ e } \mathbf{v}_2=\begin{bmatrix}
+    q_1 \\ q_2
+  \end{bmatrix}$$
+
+  queremos saber como são as trajetórias de 
+  $$ \begin{bmatrix}
+    x_{k+1} \\ y_{k+1}\end{bmatrix} = A \begin{bmatrix}
+      x_k \\ y_k
+  \end{bmatrix}$$
+  
+\end{frame}
+
+
+\begin{frame}
+  \begin{gather*}
+    \begin{bmatrix}
+      x_k \\ y_k
+    \end{bmatrix} = A^k \begin{bmatrix}
+      x_0 \\ y_0
+    \end{bmatrix} = \begin{bmatrix}
+      p_1 & q_1 \\
+      p_2 & q_2 
+    \end{bmatrix}\begin{bmatrix}
+      \lambda_1^k & 0 \\
+      0 & \lambda_2^k
+    \end{bmatrix} P^{-1}\begin{bmatrix}
+      x_0 \\ y_0
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      x_k \\ y_k
+    \end{bmatrix} =\begin{bmatrix}
+      \mathbf{v}_1 & \mathbf{v}_2
+    \end{bmatrix} \begin{bmatrix}
+      \lambda_1^k a \\ \lambda_2^k b
+    \end{bmatrix} = \lambda_1^k a\textcolor{blue}{\mathbf{v}_1} + \lambda_2^kb \textcolor{green}{\mathbf{v}_2}
+  \end{gather*}
+
+  E agora podemos repetir as análises anteriores  substituindo os
+  vetores canônicos $\mathbf{e}_1$ e $\mathbf{e}_2$ pelos autovetores
+  $\mathbf{v}_1$ e $\mathbf{v}_2$.
+\end{frame}
+
+\begin{frame}{Exemplo}
+  \begin{gather*}
+    \begin{bmatrix}
+      x_{k+1} \\ y_{k+1} 
+    \end{bmatrix} = \begin{bmatrix}
+      4& -1 \\ 2 & 1
+    \end{bmatrix}\begin{bmatrix}
+      x_k \\ y_k
+    \end{bmatrix}
+  \end{gather*}
+  Tem como autovalores $3$ e $2$ e como autovetores associados 
+  $\mathbf{v}_1=\begin{bmatrix}
+    1 \\ 1
+  \end{bmatrix}$ e $\mathbf{v}_2=\begin{bmatrix}
+    1 \\ 2
+  \end{bmatrix}.$ As trajetórias crescem com fator $3$ na direção do 
+  $\mathbf{v}_1$ e com fator $2$ na direção do $\mathbf{v}_2$ e para 
+  $k \to \infty$ tende para a direção de $\mathbf{v}_1$
+\end{frame}
+
+\begin{frame}{Autovalores complexos}
+  \begin{gather*}
+    \begin{bmatrix}
+      x_{k+1} \\ y_{k+1} 
+    \end{bmatrix} = \begin{bmatrix}
+      0& -1\\ 1 & 0
+    \end{bmatrix}\begin{bmatrix}
+      x_k \\ y_k
+    \end{bmatrix}
+  \end{gather*}
+  A matriz deste sistema tem o polinômio característico 
+  $p(\lambda)= \lambda^2 + 1$ e os autovalores são os números
+  complexos $\pm i$
+  
+\end{frame}
+
+\begin{frame}
+  Neste caso sabemos que $A=\begin{bmatrix}
+    0 & -1 \\ 1 & 0
+  \end{bmatrix}$ é uma matriz de rotação de \ang{90}
+  Então a trajetória por qualquer ponto $\begin{bmatrix}
+    x \\ y
+  \end{bmatrix}$ tem só quatro pontos
+  $$\left\{  \begin{bmatrix}
+    x \\ y
+  \end{bmatrix}, \begin{bmatrix}
+    -y \\ x
+  \end{bmatrix}, \begin{bmatrix}
+    -x \\ -y 
+  \end{bmatrix} , \begin{bmatrix}
+    y \\ -x
+  \end{bmatrix}\right\}$$
+\end{frame}
+
+\begin{frame}{Matriz de rotação}
+  $$ A= \begin{bmatrix}
+    \cos(\theta) & -\sin(\theta) \\
+    \sin(\theta)& \cos(\theta)
+  \end{bmatrix}$$ é a matriz de rotação de um ângulo
+  $\theta$ no sentido anti-horário. Os autovalores desta
+  matriz são $\cos(\theta) \pm i\sin(\theta)$.
+  Note que
+  $$ \begin{bmatrix}
+    \cos(\theta) & -\sin(\theta) \\
+    \sin(\theta)& \cos(\theta)
+  \end{bmatrix}^n=\begin{bmatrix}
+    \cos(n\theta) & -\sin(n\theta) \\
+    \sin(n\theta)& \cos(n\theta)
+  \end{bmatrix} $$
+  Então 
+  $$ \begin{bmatrix}
+    x_k \\ y_k
+  \end{bmatrix} = \begin{bmatrix}
+    \cos(n\theta) & -\sin(n\theta) \\
+    \sin(n\theta)& \cos(n\theta)
+  \end{bmatrix}\begin{bmatrix}
+    x_0 \\ y_0
+  \end{bmatrix} $$
+      
+\end{frame}
+
+\begin{frame}{Exemplo}
+  \begin{gather*}
+    A=\begin{bmatrix}
+      3 & -4 \\ 4 & 3
+    \end{bmatrix} = 5 \begin{bmatrix}
+      \frac{3}{5}&-\frac{4}{5}\\[2mm]
+      \frac{4}{5}&\frac{3}{5}
+    \end{bmatrix} = 5\begin{bmatrix}
+      \cos(\theta) & -\sin(\theta) \\
+      \sin(\theta)& \cos(\theta)
+    \end{bmatrix} \text{ com } \theta = \arccos(3/5)
+  \end{gather*}
+  Os autovalores de $A$ são $3 \pm 4i$ e as trajetórias são
+  $$ \begin{bmatrix}
+    x_n \\ y_n 
+  \end{bmatrix} = 5^n\begin{bmatrix}
+    \cos(n\theta) & -\sin(n\theta) \\
+    \sin(n\theta)& \cos(n\theta)
+  \end{bmatrix}$$
+  
+\end{frame}
+
+\begin{frame}{Exemplo}
+  $$ A = \begin{bmatrix}
+    11 & - 6\\
+    15 & -7
+  \end{bmatrix} $$ 
+  tem autovalores
+  $$ \lambda_{1,2}=2\pm 3i $$
+  Podemos achar os "autovetores complexos"
+  $$ \mathbf{v}_1 = \begin{bmatrix}
+    2 \\ 3
+  \end{bmatrix} -i\begin{bmatrix}
+    0 \\ 1
+  \end{bmatrix} \text{ e }\mathbf{v}_2 = \begin{bmatrix}
+    2 \\ 3
+  \end{bmatrix} + i\begin{bmatrix}
+    0 \\ 1
+  \end{bmatrix} $$
+  Agora definindo 
+  $$ Q= \begin{bmatrix}
+    2 & 0 \\
+    3 & 1
+  \end{bmatrix} \text{ temos } Q^{-1}AQ = \begin{bmatrix}
+    2 & -3 \\ 3 & 2
+  \end{bmatrix}$$
+
+
+  
+\end{frame}
+
+\end{document}

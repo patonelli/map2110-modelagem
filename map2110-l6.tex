@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{siunitx}
+
+\parindent=0pt
+
+ \addtolength{\textheight}{3.5cm}
+ \addtolength{\oddsidemargin}{-1cm}
+ \addtolength{\evensidemargin}{-1cm}
+ \addtolength{\textwidth}{2cm}
+ \addtolength{\topmargin}{-2.0cm}
+\newcounter{questao}
+\newcommand{\quest}{\stepcounter{questao}{\bf \arabic{questao}.\ }}
+
+\begin{document}
+\hrule
+ {  \sf  Lista 6 - Revisão I  \hfill \fbox{L6-2020}}
+\hrule
+
+\vspace{0.5cm}
+
+\thispagestyle{empty}
+\fontsize{14}{16}\selectfont
+
+\quest Verifique se os vetores $\mathbf{v}_1,$ $\mathbf{v}_2$ e $\mathbf{v}_3$ são linearmente independentes e 
+escreva o vetor $\mathbf{u} = \begin{bmatrix}
+   1 \\ 1 \\ 0
+\end{bmatrix}$ como combinação linear deles
+$$ \mathbf{v}_1 = \begin{bmatrix}
+   1 \\ 0 \\ 1
+\end{bmatrix}\text{  } \mathbf{v}_2=\begin{bmatrix}
+   1 \\ -1 \\ 2
+\end{bmatrix}\text{ e }\mathbf{v}_3=\begin{bmatrix}
+   0 \\ -1 \\ 1
+\end{bmatrix} $$
+
+\vspace{0.3cm}
+
+\quest Achar a equação geral de um plano $\Pi$ em $\mathbb{R}^3$ ($ax+by+cz=d$) gerado pelos vetores
+$\mathbf{v}_1$ e $\mathbf{v}_3$ da questão anterior passando pelo ponto $(1,0,0)$.
+
+\vspace{0.3cm}
+
+\quest Ache todas as soluções do seguinte sistema de equações lineares:
+\begin{align*}
+   x_1 +x_2 +x_3 -x_4&=3\\
+   3x_1+ 5x_2 -2x_3+ x_4&=1 \\
+   -3x_1 -7x_2 +7x_3 -5x_4&= 7\\
+   x_1+ 3x_2 -4x_3 +3x_4&= -5
+\end{align*}
+
+
+\vspace{0.3cm}
+
+\quest Se $X$ é uma matriz $2\times2$, definimos $p(X) = X^3 - 5X^2 + 11X - 4I$.
+
+Se $p(U) =\begin{bmatrix}
+   1 & 3 \\ -1 & 0
+\end{bmatrix}$ achar $p(U^T)$.
+
+Se $p(U)=0$ encontre $U^{-1}$ em termos de $U$.
+
+\vspace{0.3cm}
+
+\quest Se $A$ é uma matriz $2\times 2$ e $A^{-1}=A^T$ então
+mostre que $A$ só pode ser de uma das seguintes formas:
+$$\text{ ou } A = \begin{bmatrix}
+   \cos{\theta} & \sin{\theta}\\ -\sin{\theta} & \cos{\theta}
+\end{bmatrix} \text{ ou } A=\begin{bmatrix}
+   \cos{\theta} & \sin{\theta} \\
+   \sin{\theta} & -\cos{\theta}
+\end{bmatrix}$$
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
